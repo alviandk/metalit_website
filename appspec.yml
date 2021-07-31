@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/code_deploy
+    destination: /home/ubuntu/myprojectdir
 hooks:
   ApplicationStop:
     - location: scripts/stop_app.sh
