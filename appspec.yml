@@ -9,9 +9,9 @@ hooks:
       timeout: 6000
       runas: ubuntu
   AfterInstall:
-    - location: scripts/migrate.sh
+    - location: scripts/system_reload.sh
       timeout: 6000
       runas: ubuntu
-    - location: scripts/system_reload.sh
+    - location: scripts/migrate.sh
       timeout: 6000
       runas: ubuntu
