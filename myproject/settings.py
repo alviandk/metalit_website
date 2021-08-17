@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ckeditor',
+
     'user_forms',
+    'vacancy',
 ]
 
 MIDDLEWARE = [
