@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from revamp import views as v
 from .views import Home, Metalit
 
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
+    path("revamp/", v.index, name="revamp"),
 ]
