@@ -1,0 +1,400 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Revamp Metalit</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="shortcut icon" type="image/png" href="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/images/favicon_metalit.png"/>
+        <style type="text/css">
+        	.container {
+			  position: relative;
+			  text-align: left;
+			}
+
+        	.centered {
+			  position: absolute;
+			  top: 65%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
+         </style>
+
+    </head>
+
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+        	<!--Navigasi-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                    	<img style='width: 50%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="beranda.html">Beranda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pelatihan.html">Pelatihan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Hubungi Kami</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                            	<p class="lead fw-normal text-white-50 mb-2">Metamorfosa . Talent . IT</p>
+                                <h1 class="display-5 fw-bolder text-white mb-2">Transformasikan dirimu jadi lebih baik</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Talent platform dengan skill standar industri masa kini</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Daftarkan diri Anda</a>
+                                   </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_208_1.png"/></div>
+                    </div>
+                </div>
+            </header>
+
+            <!--My Work section-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Cara kerja kami</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature mb-2"><img style='width:95%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_314.png"></div>
+                                    <h2 class="h5">Pelatihan</h2>
+                                    <p class="mb-0">Para pencari kerja diberikan pelatihan hard skill dan soft skill di bidang IT.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature mb-2"><img style='width:95%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group.png"></div>
+                                    <h2 class="h5">Kerjasama dengan perusahaan</h2>
+                                    <p class="mb-0">Metalit menjalin kerjasama dengan perusahaan untuk menyalurkan pencari kerja</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature mb-2"><img style='width:95%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_315.png"></div>
+                                    <h2 class="h5">Proses perekrutan</h2>
+                                    <p class="mb-0">Metalit menyediakan list kandidat pencari kerja sesuai dengan permintaan perusahaan.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature mb-2"><img style='width:95%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_316.png"></div>
+                                    <h2 class="h5">Evaluasi</h2>
+                                    <p class="mb-0">Pencari kerja yang diterima oleh perusahaan relasi melakukan evaluasi bersama Metalit selama masa percobaan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why choose me section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_313_1.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder mb-5">Kenapa memilih kami?</h2>
+                            	<div class="mb-3">
+                            		<div class="row">
+									  <div class="col-md-2">
+									    <img style='width:50%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_42_1.png">
+									  </div>
+									  <div class="col-md-9">
+									    <h2 class="h5">Pelatihan industri masa kini</h2>
+									  </div>
+									</div>
+
+                            		<div class="row">
+									  <div class="col-md-2"></div>
+									  <div class="col-md-9">
+									    <p class="mb-0">Para pencari kerja diberikan pelatihan hard skill dan soft skill di bidang IT.</p>
+									  </div>
+									</div>
+                            	</div>
+
+                            	<div class="mb-3">
+                            		<div class="row">
+									  <div class="col-md-2">
+									    <img style='width:50%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_42_1.png">
+									  </div>
+									  <div class="col-md-9">
+									    <h2 class="h5">Harga termurah</h2>
+									  </div>
+									</div>
+
+                            		<div class="row">
+									  <div class="col-md-2"></div>
+									  <div class="col-md-9">
+									    <p class="mb-0">Metalit memberikan harga yang jauh lebih murah jika dibandingkan platform lain dengan bidang sejenis</p>
+									  </div>
+									</div>
+                            	</div>
+
+                            	<div class="mb-3">
+                            		<div class="row">
+									  <div class="col-md-2">
+									    <img style='width:50%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_42_1.png">
+									  </div>
+									  <div class="col-md-9">
+									    <h2 class="h5">Mengerjakan proyek riil</h2>
+									  </div>
+									</div>
+
+                            		<div class="row">
+									  <div class="col-md-2"></div>
+									  <div class="col-md-9">
+									    <p class="mb-0">Di akhir pelatihan para pencari kerja dibentuk menjadi tim untuk mengerjakan project real yang bisa dijadikan sebagai portofolio</p>
+									  </div>
+									</div>
+                            	</div>
+
+                            	<div class="mb-5">
+                            		<div class="row">
+									  <div class="col-md-2">
+									    <img style='width:50%;' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_42_1.png">
+									  </div>
+									  <div class="col-md-9">
+									    <h2 class="h5">Mentor Berpengalaman</h2>
+									  </div>
+									</div>
+
+                            		<div class="row">
+									  <div class="col-md-2"></div>
+									  <div class="col-md-9">
+									    <p class="mb-0">Dibimbing langsung oleh mentor yang berpengalaman di berbagai perusahaan startup dalam dan luar negeri</p>
+									  </div>
+									</div>
+                            	</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+			<!--our program-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Program kami</h1>
+                        <p class="lead fw-normal text-muted mb-0">laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
+                    </div>
+
+                    <div class="row gx-5 content-center">
+                        <div class="col-xl-4">
+                            <div class="card mb-5 mb-xl-0">
+                                <div class="card-body p-5">
+                                	<div class="mb-3 text-center">
+                                		<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Vector_6.png">
+                                	</div>
+                                	<div>
+                                		<span>Pelatihan dilakukan secara online dengan batas maksimal 10 orang per batch.</span>
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4">
+                            <div class="card mb-5 mb-xl-0">
+                                <div class="card-body p-5">
+                                	<div class="mb-3 text-center">
+                                		<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Vector_6.png">
+                                	</div>
+                                	<div>
+                                		<span>Pelatihan dilakukan secara online dengan batas maksimal 10 orang per batch.</span>
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4">
+                            <div class="card mb-5 mb-xl-0">
+                                <div class="card-body p-5">
+                                	<div class="mb-3 text-center">
+                                		<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Vector_6.png">
+                                	</div>
+                                	<div>
+                                		<span>Pelatihan dilakukan secara online dengan batas maksimal 10 orang per batch.</span>
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-->
+            <div class="py-5 bg-light">
+            	<div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Pencapaian Kami</h1>
+                        <p class=" text-muted mb-0">Voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, Modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <span class="display-4 fw-bold">32</span>
+                                <div class="text-muted">Talen dalam pelatihan</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <span class="display-4 fw-bold">14</span>
+                                <div class="text-muted">Talen telah dipekerjakan</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <span class="display-4 fw-bold">7</span>
+                                <div class="text-muted">Kerjasama perusahaan</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <span class="display-4 fw-bold">12</span>
+                                <div class="text-muted">Talen siap kerja</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- section-->
+            <div class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xl-9">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"Pendidikan bukan cuma pergi ke sekolah dan mendapatkan gelar. Tapi, juga soal memperluas pengetahuan dan menyerap ilmu kehidupan"</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="fw-bold">- Shakuntala Devi - </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- section-->
+            <div class="py-5 bg-light">
+            	<div class="container px-5 my-5">
+                    <div class="text-center mb-2">
+                        <h1 class="fw-bolder">Testimoni</h1>
+                        <p class=" text-muted mb-0">Yang Mereka Katakan Tentang Kami</p>
+                    </div>
+
+                    <div class="row row-cols-sm-2">
+                        <div class="col-mb-3">
+                            <div class="container">
+                                <img class="card-img-top" src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_322.png"/>
+                                <div class="centered">
+	                                <p>Ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+	                                <p class="text-center">Nanda Firmansyah</p>
+	                                <p class="text-muted text-center">Frontend Developer</p>
+	                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-mb-3">
+                            <div class="container">
+                                <img class="card-img-top" src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_323.png"/>
+                                <div class="centered">
+	                                <p>“Nam libero tempore, cum soluta nobis est eligendi optio, quod maxime placeat, facere possimus, omnis voluptas assumenda
+	                                <p class="text-center">Lisa Apriani</p>
+	                                <p class="text-muted text-center">Quality assurance</p>
+	                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- section-->
+            <div class="py-5">
+            	<div class="container px-3 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Mitra Kami</h1>
+                    </div>
+
+                    <div class="row row-cols-xl-3">
+                    	<div class="col mb-3">
+                            <div class="text-center">
+                                <img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Logo_OVO.png">
+                            </div>
+                        </div>                      
+                    	<div class="col mb-3">
+                            <div class="text-center">
+                                <img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/logo_1.png">
+                            </div>
+                        </div>                      
+                        <div class="col mb-3">
+                            <div class="text-center">
+                            	<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/logo_Mekar.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                   <!-- section-->
+            <div class="py-5 bg-light">
+            	<div class="px-3 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Metalit</h1>
+                    </div>
+
+                    <div class="row row-cols-xl-3">
+                    	<div class="col mb-3">
+                            <div class="text-center">
+                            	<p>Informasi</p>
+                            	<p>Pusat Bantuan</p>
+                            	<p>Syarat dan Ketentuan</p>
+                            	<p>Kebijakan Privasi</p>
+                            </div>
+                        </div>                      
+                    	<div class="col mb-3">
+                            <div class="text-center">
+                            	<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_57.png">
+                            	<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_58.png">
+                            	<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_59.png">
+                            	<img src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_60.png">
+                            </div>
+                        </div>                      
+                        <div class="col">
+                            <div class="text-center">
+                            	<p>Hubungi Kami</p>
+                            	<p>Jl. Bangka Raya No.17, RT.13/RW.1, Bangka,</p> 
+                            	<p>Kec. Mampang Prpt, Kota Jakarta Selatan,</p>
+                                <p>Daerah Khusus Ibukota Jakarta 12730</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="text-center">
+                    <div class="small m-0 text-white">All Rights Reserved | Copyright © 2021 | PT Metamorfosa Teknologi Berdikari</div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
