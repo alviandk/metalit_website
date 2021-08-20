@@ -22,5 +22,6 @@ urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
-    path("revamp/", v.index, name="revamp"),
+    path("revamp/", v.index, name="home"),
+    path("revamp/about", v.about, name="about"),
 ]
