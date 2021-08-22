@@ -91,7 +91,7 @@ if DB_ENGINE == 'sqlite':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': DB_NAME,
+            'NAME': str(BASE_DIR / "db.sqlite3"),
         }
     }
 else:
