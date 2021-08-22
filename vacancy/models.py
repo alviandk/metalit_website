@@ -12,6 +12,7 @@ class Company(models.Model):
 
 class Vacancy(models.Model):
     position = models.CharField(max_length=128)
+    description = RichTextField()
     link = models.URLField()
     company = models.ForeignKey(
         Company,
