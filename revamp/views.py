@@ -9,3 +9,7 @@ def contact(request):
 	return render(request, 'revamp/contact.html')
 def pelatihan(request):
 	return render(request, 'revamp/pelatihan.html')
+def syaratketentuan(request):
+	return render(request, 'revamp/syarat-ketentuan.html')
+def kebijakanprivasi(request):
+	return render(request, 'revamp/kebijakan-privasi.html')

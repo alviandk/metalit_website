@@ -24,7 +24,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Beranda</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'pelatihan' %}">Pelatihan</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Hubungi Kami</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
@@ -40,8 +40,16 @@
         <footer class="bg-dark py-4">
             <div class="px-5 mb-3 text-white">
                     <div class="row row-cols-xl-3">
-                        <div class="col mb-3"><p>Informasi<br>Pusat Bantuan
-                            <br>Syarat dan Ketentuan<br>Kebijakan Privasi
+                        <div class="col mb-3">
+                            <ul class="list-unstyled">
+                                <li><a class="text-reset text-decoration-none" href="#">Informasi</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#">Pusat Bantuan</a></li>
+                                <li>
+                                    <a class="text-reset text-decoration-none" href="{% url 'syarat-ketentuan' %}">Syarat dan Ketentuan</a>
+                                </li>
+                                <li><a class="text-reset text-decoration-none" href="{% url 'kebijakan-privasi' %}">Kebijakan Privasi</a></li>
+                            </ul>
+                        </ul>
                         </div>                      
                         <div class="col mb-3"></div>                      
                         <div class="col">
