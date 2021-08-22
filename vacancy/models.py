@@ -6,6 +6,9 @@ from ckeditor.fields import RichTextField
 class Company(models.Model):
     name = models.CharField(max_length=128)
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Vacancy(models.Model):
     position = models.CharField(max_length=128)
@@ -21,3 +24,6 @@ class Vacancy(models.Model):
         blank=True,
         help_text='Tanggal berakhir lowongan (bila ada)'
     )
+
+    def __str__(self):
+        return f"{self.company}: {self.position}"
