@@ -16,7 +16,7 @@
           <!--Navigasi-->
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container px-5">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" href="{% url 'home' %}">
                 <img class='img50' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Beranda</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'pelatihan' %}">Pelatihan</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Hubungi Kami</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
@@ -41,22 +41,21 @@
             <div class="px-5 mb-3 text-white">
                     <div class="row row-cols-xl-3">
                         <div class="col mb-3">
-                            <div class="text-center">
-                                <p>Informasi</p>
-                                <p>Pusat Bantuan</p>
-                                <p>Syarat dan Ketentuan</p>
-                                <p>Kebijakan Privasi</p>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li><a class="text-reset text-decoration-none" href="#">Informasi</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#">Pusat Bantuan</a></li>
+                                <li>
+                                    <a class="text-reset text-decoration-none" href="{% url 'syarat-ketentuan' %}">Syarat dan Ketentuan</a>
+                                </li>
+                                <li><a class="text-reset text-decoration-none" href="{% url 'kebijakan-privasi' %}">Kebijakan Privasi</a></li>
+                            </ul>
+                        </ul>
                         </div>                      
-                        <div class="col mb-3">
-                        </div>                      
+                        <div class="col mb-3"></div>                      
                         <div class="col">
-                            <div class="text-center">
-                                <p>Hubungi Kami</p>
-                                <p>Jl. Bangka Raya No.17, RT.13/RW.1, Bangka,</p> 
-                                <p>Kec. Mampang Prpt, Kota Jakarta Selatan,</p>
-                                <p>Daerah Khusus Ibukota Jakarta 12730</p>
-                            </div>
+                            <p>Hubungi Kami<br>Jl. Bangka Raya No.17, RT.13/RW.1, Bangka,
+                            <br>Kec. Mampang Prpt, Kota Jakarta Selatan,
+                            <br>Daerah Khusus Ibukota Jakarta 12730</p>
                         </div>
                     </div>
             </div>
@@ -83,5 +82,10 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
     </body>
 </html>

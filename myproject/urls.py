@@ -26,4 +26,6 @@ urlpatterns = [
     path("revamp/about", v.about, name="about"),
     path("revamp/contact", v.contact, name="contact"),
     path("revamp/pelatihan", v.pelatihan, name="pelatihan"),
+    path("revamp/syarat-ketentuan", v.syaratketentuan, name="syarat-ketentuan"),
+    path("revamp/kebijakan-privasi", v.kebijakanprivasi, name="kebijakan-privasi"),
 ]
