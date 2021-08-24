@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import environ
 import os
 from pathlib import Path
+from django.contrib import messages
+
 
 env = environ.Env(
     # set casting, default value
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
 
     'user_forms',
     'vacancy',
+    'revamp',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +180,11 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+}
