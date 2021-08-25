@@ -1,5 +1,6 @@
 from django.forms import ModelForm
-from .models import Contact, pelatihan
+from .models import Contact, Pelatihan
+from django import forms
 
 
 class ContactForm(ModelForm):
@@ -7,7 +8,14 @@ class ContactForm(ModelForm):
         model = Contact
         fields = '__all__'
 
-class pelatihantForm(ModelForm):
+class PelatihantForm(ModelForm):
     class Meta:
-        model = pelatihan
+        model = Pelatihan
         fields = '__all__'
+        widgets={
+            'yesorno': forms.RadioSelect(
+                attrs={
+                    'class':'custom-control-input custom-control-label',
+                }
+            ),
+        }
