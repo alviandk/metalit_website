@@ -28,4 +28,5 @@ urlpatterns = [
     path("revamp/pelatihan", v.pelatihan, name="pelatihan"),
     path("revamp/syarat-ketentuan", v.syaratketentuan, name="syarat-ketentuan"),
     path("revamp/kebijakan-privasi", v.kebijakanprivasi, name="kebijakan-privasi"),
+    path("revamp/coba", v.contact_view, name="contact_view"),
 ]

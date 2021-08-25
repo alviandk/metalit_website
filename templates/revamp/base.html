@@ -3,12 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Revamp Metalit</title>
+        <title>revamp{% block title %}{% endblock %}</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <link rel="shortcut icon" type="image/png" href="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/images/favicon_metalit.png"/>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     </head>
+
+
 
     <body class="d-flex flex-column h-100">
         <!-- main-->
@@ -17,7 +19,7 @@
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container px-5">
               <a class="navbar-brand" href="{% url 'home' %}">
-                <img class='img50' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
+                <img class='img50 d-none d-xl-block' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
