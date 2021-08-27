@@ -4,24 +4,24 @@ from django.contrib import messages
 
 
 # Create your views here.
-def home(request):
+def beranda(request):
 	return render(request, 'revamp/index.html')
 
-def about(request):
-	return render(request, 'revamp/about.html')
+def tentang_kami(request):
+	return render(request, 'revamp/tentang_kami.html')
 
-def contact(request):
+def hubungi_kami(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Message sent successfully')
-			return render(request, 'revamp/contact.html')
+			return render(request, 'revamp/hubungi_kami.html')
 		else:
 			messages.error(request, 'message not sent successfully')
 	form = ContactForm()
 	context = {'form': form}
-	return render(request, 'revamp/contact.html', context)
+	return render(request, 'revamp/hubungi_kami.html', context)
 
 def pelatihan(request):
 	if request.method == 'POST':
@@ -42,8 +42,5 @@ def syarat_ketentuan(request):
 def kebijakan_privasi(request):
 	return render(request, 'revamp/kebijakan_privasi.html')
 
-def contact_view(request):
-	return render(request, 'revamp/coba.html')
-
-def help(request):
-	return render(request, 'revamp/help.html')
+def pusat_bantuan(request):
+	return render(request, 'revamp/pusat_bantuan.html')
