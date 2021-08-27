@@ -4,13 +4,13 @@ from django.contrib import messages
 
 
 # Create your views here.
-def Home(request):
+def home(request):
 	return render(request, 'revamp/index.html')
 
-def About(request):
+def about(request):
 	return render(request, 'revamp/about.html')
 
-def Contact(request):
+def contact(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
@@ -23,7 +23,7 @@ def Contact(request):
 	context = {'form': form}
 	return render(request, 'revamp/contact.html', context)
 
-def Pelatihan(request):
+def pelatihan(request):
 	if request.method == 'POST':
 		form = PelatihantForm(request.POST)
 		if form.is_valid():
@@ -36,11 +36,14 @@ def Pelatihan(request):
 	context = {'form': form}
 	return render(request, 'revamp/pelatihan.html', context)
 
-def Syarat_Ketentuan(request):
+def syarat_ketentuan(request):
 	return render(request, 'revamp/syarat_ketentuan.html')
 
-def Kebijakan_Privasi(request):
+def kebijakan_privasi(request):
 	return render(request, 'revamp/kebijakan_privasi.html')
 
-def Contact_View(request):
-	return render(request, 'revamp/coba.html', context)
+def contact_view(request):
+	return render(request, 'revamp/coba.html')
+
+def help(request):
+	return render(request, 'revamp/help.html')

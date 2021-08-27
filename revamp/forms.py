@@ -13,7 +13,7 @@ class PelatihantForm(ModelForm):
         model = Pelatihan
         fields = '__all__'
         widgets={
-            'yesorno': forms.RadioSelect(
+            'gender': forms.RadioSelect(
                 attrs={
                     'class':'custom-control-input custom-control-label',
                 }

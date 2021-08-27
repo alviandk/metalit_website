@@ -12,7 +12,8 @@
           <h2 class="fw-bolder mb-3">Bergabung dengan kami</h2>
           <p class="text-muted mb-4">Kuasai hard skill dan soft skill dengan mengikuti 12 minggu pelatihan bersama Metalit, dan dapatkan materi standar industri dengan harga terjangkau</p>
         </div>
-        
+
+        <!--Message-->
         {% for message in messages %}
         <div class="container-fluid p-0">
           <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
@@ -24,6 +25,7 @@
         </div>
         {% endfor %} 
 
+        <!--Form-->
         <div class="bg-black text-white">
           <form class="py-5 px-5" method="post">  
             {% csrf_token %}
@@ -82,6 +84,7 @@
               </div>
             </div>
           </form>
+
         </div>
       </div>
     </div>
