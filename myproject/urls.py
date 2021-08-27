@@ -15,17 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from revamp import views as v
+from revamp import views
 from .views import Home, Metalit
 
 urlpatterns = [
-    path("", Home.as_view(), name="home"),
-    path("metalit/", Metalit.as_view(), name="metalit"),
+    #path("", Home.as_view(), name="home"),
+    #path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
-    path("revamp/", v.home, name="home"),
-    path("revamp/about", v.about, name="about"),
-    path("revamp/contact", v.contact, name="contact"),
-    path("revamp/pelatihan", v.pelatihan, name="pelatihan"),
-    path("revamp/syarat-ketentuan", v.syaratketentuan, name="syarat-ketentuan"),
-    path("revamp/kebijakan-privasi", v.kebijakanprivasi, name="kebijakan-privasi"),
+    path("", views.home, name="home"),
+    path("about", views.about, name="about"),
+    path("contact", views.contact, name="contact"),
+    path("pelatihan", views.pelatihan, name="pelatihan"),
+    path("syarat-ketentuan", views.syarat_ketentuan, name="syarat_ketentuan"),
+    path("kebijakan-privasi", views.kebijakan_privasi, name="kebijakan_privasi"),
+    path("coba", views.contact_view, name="contact_view"),
+    path("help", views.help, name="help"),
 ]

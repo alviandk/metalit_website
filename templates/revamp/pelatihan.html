@@ -1,6 +1,8 @@
 {% extends "revamp/base.html" %}
 {% load static %}
 
+{% block title %} - Pelatihan{% endblock %}
+
 {% block page_content %}
 <section class="py-5">
   <div class="container px-5">
@@ -10,77 +12,79 @@
           <h2 class="fw-bolder mb-3">Bergabung dengan kami</h2>
           <p class="text-muted mb-4">Kuasai hard skill dan soft skill dengan mengikuti 12 minggu pelatihan bersama Metalit, dan dapatkan materi standar industri dengan harga terjangkau</p>
         </div>
+
+        <!--Message-->
+        {% for message in messages %}
+        <div class="container-fluid p-0">
+          <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times</span>
+            </button>
+            {{ message }}
+          </div>
+        </div>
+        {% endfor %} 
+
+        <!--Form-->
         <div class="bg-black text-white">
-          <form class="py-5 px-5">
+          <form class="py-5 px-5" method="post">  
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="fieldWrapper">
+                  {{ field.errors }}
+              </div>
+            {% endfor %}
             <h3 class="mb-5 text-center">Daftarkan diri Anda</h3>
             <div class="row mb-3">
               <div class="col-4"><label>Nama</label></div>
               <div class="col-8">
-                <input type="text" class="form-control">
+                <input type="text" name="nama" maxlength="255" required="" id="id_nama" class="form-control mb-3">
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-4"><label>Email</label></div>
               <div class="col-8">
-                <input type="text" class="form-control">
+                <input type="email" name="email" required="" id="id_email" class="form-control mb-3">
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-4 custom-control-input custom-control-label">
               <div class="col-4"><label>Jenis Kelamin</label></div>
               <div class="col-8">
-                <div class="form-inline">
-                  <label class="radio">
-                      <input type="radio" value="1"/>Laki-Laki
-                  </label>
-                  <label class="radio px-5">
-                      <input type="radio" value="2"/>Perempuan
-                   </label>
-                </div>
+                <label for="id_0"><input type="radio" name="gender" value="1" class="custom-control-input custom-control-label" required="" id="id_0"> Laki-Laki</label>
+                <label class="px-5" for="id_1"><input type="radio" name="gender" value="2" class="custom-control-input custom-control-label" required="" id="id_1"> Perempuan</label>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-4"><label>Nomor Handphone</label></div>
               <div class="col-8">
-                <input type="text" class="form-control">
+                <input type="text" name="hp" maxlength="20" required="" id="id_hp" class="form-control mb-3">
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-4"><label>Pendidikan Terakhir</label></div>
               <div class="col-8">
-                <input type="text" class="form-control">
+                <input type="text" name="study" maxlength="20" required="" id="id_pendidikan" class="form-control mb-3">
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-4"><label>Jurusan</label></div>
               <div class="col-8">
-                <input type="text" class="form-control">
+                <input type="text" name="jurusan" maxlength="20" required="" id="id_jurusan" class="form-control mb-3">
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-4"><label>Alasan Bergabung</label></div>
               <div class="col-8">
-                <textarea class="form-control"rows="3"></textarea>
+                <textarea name="reason" cols="40" rows="10" required="" id="id_alasan" class="form-control mb-3" rows="5"></textarea>
               </div>
             </div>
             <div class="row">
               <div class="col-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">kirim</button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content py-3">
-                      <div class="modal-body text-center px-8 my-3">
-                        <img class="mb-3" src='{% static "assets/Group 257.svg" %}'>
-                        <h4 class="text-dark py-3">Terimakasih telah mendaftar diri Anda</h4>
-                        <p class="text-dark mb-5">Tim Metalit akan segera menghubungi kamu, siapkan dirimu untuk mengikuti pelatihan khusus dari kami</p>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali ke Pelatihan</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <input type="submit" value="Kirim" class="btn btn-primary">
               </div>
             </div>
           </form>
+
         </div>
       </div>
     </div>
