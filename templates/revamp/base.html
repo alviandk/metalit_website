@@ -16,7 +16,7 @@
           <!--Navigasi-->
           <nav class="navbar navbar-expand-lg navbar-light mb-3">
             <div class="container px-5">
-              <a class="navbar-brand" href="{% url 'home' %}">
+              <a class="navbar-brand" href="{% url 'beranda' %}">
                 <img class='img50 d-none d-xl-block' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
               </a>
               <!--toggler-->
@@ -25,10 +25,10 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Beranda</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="{% url 'beranda' %}">Beranda</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'pelatihan' %}">Pelatihan</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Hubungi Kami</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'hubungi_kami' %}">Hubungi Kami</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'tentang_kami' %}">Tentang Kami</a></li>
                 </ul>
               </div>
             </div>
@@ -42,9 +42,8 @@
                     <div class="row row-cols-xl-3">
                         <div class="col mb-3">
                             <ul class="list-unstyled">
-                                <li><a class="text-reset text-decoration-none" href="#">Informasi</a></li>
                                 <li>
-                                    <a class="text-reset text-decoration-none" href="{% url 'help' %}">Pusat Bantuan</a>
+                                    <a class="text-reset text-decoration-none" href="{% url 'pusat_bantuan' %}">Pusat Bantuan</a>
                                 </li>
                                 <li>
                                     <a class="text-reset text-decoration-none" href="{% url 'syarat_ketentuan' %}">Syarat dan Ketentuan</a>
