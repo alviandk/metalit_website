@@ -4,43 +4,43 @@ from django.contrib import messages
 
 
 # Create your views here.
-def beranda(request):
-	return render(request, 'revamp/index.html')
+def home(request):
+	return render(request, 'revamp/home.html')
 
-def tentang_kami(request):
-	return render(request, 'revamp/tentang_kami.html')
+def about(request):
+	return render(request, 'revamp/about.html')
 
-def hubungi_kami(request):
+def contact(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Message sent successfully')
-			return render(request, 'revamp/hubungi_kami.html')
+			return render(request, 'revamp/contact.html')
 		else:
 			messages.error(request, 'message not sent successfully')
 	form = ContactForm()
 	context = {'form': form}
-	return render(request, 'revamp/hubungi_kami.html', context)
+	return render(request, 'revamp/contact.html', context)
 
-def pelatihan(request):
+def course(request):
 	if request.method == 'POST':
 		form = PelatihantForm(request.POST)
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Message sent successfully')
-			return render(request, 'revamp/pelatihan.html')
+			return render(request, 'revamp/course.html')
 		else:
 			messages.error(request, 'message not sent successfully')
 	form = PelatihantForm()
 	context = {'form': form}
-	return render(request, 'revamp/pelatihan.html', context)
+	return render(request, 'revamp/course.html', context)
 
-def syarat_ketentuan(request):
-	return render(request, 'revamp/syarat_ketentuan.html')
+def term_conditions(request):
+	return render(request, 'revamp/term_conditions.html')
 
-def kebijakan_privasi(request):
-	return render(request, 'revamp/kebijakan_privasi.html')
+def privacy_policy(request):
+	return render(request, 'revamp/privacy_policy.html')
 
-def pusat_bantuan(request):
-	return render(request, 'revamp/pusat_bantuan.html')
+def help(request):
+	return render(request, 'revamp/help.html')
