@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm, PelatihantForm
+from .models import QA
 from django.contrib import messages
 
 
@@ -44,3 +45,8 @@ def privacy_policy(request):
 
 def help(request):
 	return render(request, 'revamp/help.html')
+
+def QA_index(request):
+    qa = QA.objects.all()
+    context = {"data": qa}
+    return render(request, "help.html", context)
