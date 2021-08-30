@@ -29,4 +29,5 @@ urlpatterns = [
     path("term_conditions", views.term_conditions, name="term_conditions"),
     path("privacy_policy", views.privacy_policy, name="privacy_policy"),
     path("help", views.help, name="help"),
+    
 ]

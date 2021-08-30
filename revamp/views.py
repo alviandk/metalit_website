@@ -16,10 +16,10 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
-			messages.success(request, 'Message sent successfully')
+			messages.success(request, 'pesan berhasil terkirim')
 			return render(request, 'revamp/contact.html')
 		else:
-			messages.error(request, 'message not sent successfully')
+			messages.error(request, 'pesan tidak berhasil terkirim')
 	form = ContactForm()
 	context = {'form': form}
 	return render(request, 'revamp/contact.html', context)
@@ -29,24 +29,21 @@ def course(request):
 		form = PelatihantForm(request.POST)
 		if form.is_valid():
 			form.save()
-			messages.success(request, 'Message sent successfully')
+			messages.success(request, 'pesan berhasil terkirim')
 			return render(request, 'revamp/course.html')
 		else:
-			messages.error(request, 'message not sent successfully')
+			messages.error(request, 'pesan tidak berhasil terkirim')
 	form = PelatihantForm()
 	context = {'form': form}
 	return render(request, 'revamp/course.html', context)
 
 def term_conditions(request):
-	return render(request, 'revamp/term_conditions.html')
+	return render(request, 'revamp/term-conditions.html')
 
 def privacy_policy(request):
-	return render(request, 'revamp/privacy_policy.html')
+	return render(request, 'revamp/privacy-policy.html')
 
 def help(request):
-	return render(request, 'revamp/help.html')
-
-def QA_index(request):
-    qa = QA.objects.all()
-    context = {"data": qa}
-    return render(request, "help.html", context)
+	qa = QA.objects.all()
+	context = {"qna": qa}
+	return render(request, 'revamp/help.html', context)
