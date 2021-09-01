@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import ContactForm, PelatihantForm
 from .models import QA
-from django.contrib import messages
 
 
 # Create your views here.
