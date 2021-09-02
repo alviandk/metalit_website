@@ -2,9 +2,10 @@ from django.test import TestCase
 from django.test import Client
 from django.urls import reverse
 from django.utils import timezone
+from django.contrib.messages import get_messages
 from .models import Contact, Pelatihan
 from .forms import ContactForm, PelatihantForm
-from django.contrib.messages import get_messages
+
 
 class RevampTest(TestCase): 
   def setUp(self):
@@ -24,17 +25,30 @@ class RevampTest(TestCase):
 
   def test_contact_page(self):
     url = reverse('contact')
-    response = self.client.post(url, data={"name": "coba", "email": "coba@gmail.com", "message": "coba di coba"})
+    data = {"name": "coba", "email": "coba@gmail.com", "message": "coba di coba"}
+    response = self.client.post(url, data=data)
     self.assertEqual(response.status_code, 200)
+    all_messages = [msg for msg in get_messages(response.wsgi_request)]
+    self.assertEqual(all_messages[0].tags, "alert-success")
+    self.assertEqual(all_messages[0].message, "pesan berhasil terkirim")
     self.assertTemplateUsed(response, 'revamp/contact.html')
 
   def test_course_page(self):
     url = reverse('course')
-    response = self.client.post(url, data={
-      "name": "coba", "email": "coba@gmail.com", 
-      "hp":"085677889900", "study":"SMA", "jurusan":"TI", 
-      "gender": 1, "reason": "belajar"})
+    data = {
+      "nama": "coba", 
+      "email": "coba@gmail.com", 
+      "hp":"085677889900", 
+      "study":"SMA",
+      "jurusan":"TI", 
+      "gender": 1, 
+      "reason": "belajar"
+      }
+    response = self.client.post(url, data=data)
     self.assertEqual(response.status_code, 200)
+    all_messages = [msg for msg in get_messages(response.wsgi_request)]
+    self.assertEqual(all_messages[0].tags, "alert-success")
+    self.assertEqual(all_messages[0].message, "pesan berhasil terkirim")
     self.assertTemplateUsed(response, 'revamp/course.html')
 
   def test_help_page(self):

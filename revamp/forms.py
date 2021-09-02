@@ -1,7 +1,6 @@
 from django.forms import ModelForm
-from .models import Contact, Pelatihan
 from django import forms
-
+from .models import Contact, Pelatihan
 
 class ContactForm(ModelForm):
     class Meta:
