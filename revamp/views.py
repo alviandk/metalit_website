@@ -3,8 +3,6 @@ from django.contrib import messages
 from .forms import ContactForm, PelatihantForm
 from .models import QA
 
-
-# Create your views here.
 def home(request):
 	return render(request, 'revamp/home.html')
 
