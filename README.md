@@ -1,4 +1,4 @@
-# metalic website
+# Metalit Website
 
 ## How to run on local machine
 * mkdir metalit
