@@ -14,6 +14,7 @@ metalic website
 export SECRET_KEY='abcd'
 export DJANGO_DEBUG=True
 export ALLOWED_HOSTS=127.0.0.1
+export BLOG_URL=http://localhost:3000
 
 export OSS_ACCESS_KEY_ID=<ask admin>
 export OSS_ACCESS_KEY_SECRET=<ask admin>

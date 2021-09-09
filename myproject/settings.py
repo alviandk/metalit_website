@@ -77,7 +77,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'revamp.context_processors.blog_url'
             ],
+
         },
     },
 ]
@@ -188,3 +190,5 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
         messages.SUCCESS: 'alert-success',
 }
+
+BLOG_URL = env('BLOG_URL')
