@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm, PelatihantForm
-from .models import QA
+from .models import QA, PrivacyPolicy, TermConditions
 
 def home(request):
 	return render(request, 'revamp/home.html')
@@ -36,10 +36,14 @@ def course(request):
 	return render(request, 'revamp/course.html', context)
 
 def term_conditions(request):
-	return render(request, 'revamp/term-conditions.html')
+	termconditions = TermConditions.objects.all()
+	context = {"termconditions": termconditions}
+	return render(request, 'revamp/term-conditions.html', context)
 
 def privacy_policy(request):
-	return render(request, 'revamp/privacy-policy.html')
+	privacypolicy = PrivacyPolicy.objects.all()
+	context = {"privacypolicy": privacypolicy}
+	return render(request, 'revamp/privacy-policy.html', context)
 
 def help(request):
 	qa = QA.objects.all()

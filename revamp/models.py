@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Contact(models.Model):
 	name = models.CharField(max_length=255)
@@ -26,3 +27,11 @@ class Pelatihan(models.Model):
 class QA(models.Model):
     question = models.CharField(max_length=255)
     answere = models.CharField(max_length=255)
+
+class PrivacyPolicy(models.Model):
+    q = models.CharField(max_length=255)
+    a = models.CharField(max_length=255)
+
+class TermConditions(models.Model):
+    title = models.CharField(max_length=255, default=None)
+    description = RichTextField()
