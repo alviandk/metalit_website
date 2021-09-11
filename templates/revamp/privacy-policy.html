@@ -8,18 +8,12 @@
   <div class="container px-5">
     <div class="justify-content-center">
       <h1 class="fw-bolder mb-5 text-center">Kebijakan dan Privasi</h1>
-      <div class="mb-3">
-        <p style="text-indent: 45px; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis hendrerit dolor magna eget est. Proin gravida hendrerit lectus a. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Egestas maecenas pharetra convallis posuere tellus pellentesque eu tincidunt. Donec et odio pellentesque diam volutpat commodo sed.</p>        
-      </div>
       <div class="mb-5">
-        {% for item in privacypolicy %}
-        <dl>
-          <dt>{{ item.q }}</dt>
-          <dd>
-            <p style="text-indent: 45px; text-align: justify;">{{ item.a }}</p>
-          </dd>
-        </dl>
-        {% endfor %}
+        <p style="text-indent: 45px; text-align: justify;">
+                {% autoescape off %}
+                  {{ content }}
+                {% endautoescape %}
+        </p>
       </div>
       <div class="py-5 px-2">
         <img class="mb-3" src='{% static "assets/Group 278.png" %}'>   

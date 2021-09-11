@@ -29,9 +29,7 @@ class QA(models.Model):
     answere = models.CharField(max_length=255)
 
 class PrivacyPolicy(models.Model):
-    q = models.CharField(max_length=255)
-    a = models.CharField(max_length=255)
-
-class TermConditions(models.Model):
-    title = models.CharField(max_length=255, default=None)
     description = RichTextField()
+
+class TermCondition(models.Model):
+    Description = RichTextField() 
