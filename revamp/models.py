@@ -26,7 +26,7 @@ class Pelatihan(models.Model):
 
 class QA(models.Model):
     question = models.CharField(max_length=255)
-    answere = models.CharField(max_length=255)
+    answere = RichTextField()
 
 class PrivacyPolicy(models.Model):
     description = RichTextField()
