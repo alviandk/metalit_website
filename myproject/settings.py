@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'user_forms',
     'vacancy',
     'revamp',
+    'backend',
 ]
 
 MIDDLEWARE = [
