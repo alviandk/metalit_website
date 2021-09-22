@@ -53,7 +53,12 @@ INSTALLED_APPS = [
     'vacancy',
     'revamp',
     'backend',
+    "graphene_django",
 ]
+
+GRAPHENE = {
+    "SCHEMA": "myproject.schema.schema"
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
