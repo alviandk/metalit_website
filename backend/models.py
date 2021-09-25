@@ -3,11 +3,11 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-# Create your models here.
+# Create your models here
 class Category(models.Model):
 	name = models.CharField(max_length=255)
 	slug = models.CharField(max_length=255)
-
+	
 	def __str__(self):
 		return self.name
 

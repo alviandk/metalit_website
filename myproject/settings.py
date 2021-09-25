@@ -34,8 +34,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-#ALLOWED_HOSTS = ['localhost']
+#ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -203,6 +203,6 @@ MESSAGE_TAGS = {
 BLOG_URL = env('BLOG_URL')
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000"
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
 ]

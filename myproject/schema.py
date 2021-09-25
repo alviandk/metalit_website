@@ -21,7 +21,8 @@ class ArticleType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     articles = graphene.List(ArticleType)
-    category = graphene.Field(CategoryType, name=graphene.String(required=True))
+    category = graphene.List(CategoryType)
+    article = graphene.Field(ArticleType, slug=graphene.String(required=True))
     writer = graphene.Field(WriterType, name=graphene.String(required=True))
     image = graphene.Field(ArticleType, id=graphene.Int(required=True))
 
@@ -31,10 +32,13 @@ class Query(graphene.ObjectType):
     def resolve_articles(root, info):
         return Article.objects.select_related("category").all()
 
-    def resolve_category(root, info, slug):
+    def resolve_category(root, info):
+        return Category.objects.all()
+
+    def resolve_article(root, info, slug):
         try:
-            return Category.objects.get(slug=slug)
-        except Category.DoesNotExist:
+            return Article.objects.get(slug=slug)
+        except Article.DoesNotExist:
             return None
 
     def resolve_writer(root, info, name):
