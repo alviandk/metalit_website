@@ -8,7 +8,7 @@ from sortedm2m.fields import SortedManyToManyField
 class Category(models.Model):
 	name = models.CharField(max_length=255)
 	slug = models.CharField(max_length=255)
-	article = SortedManyToManyField('Article', sorted=True, blank = True, null=True)
+	article = SortedManyToManyField('Article', sorted=True, blank = True)
 
 	def __str__(self):
 		return self.name
@@ -18,7 +18,7 @@ class Writer(models.Model):
 	picture = models.ImageField(null=True, blank=True, upload_to="img/picture")
 	email = models.EmailField()
 	last_update = models.DateTimeField(auto_now=True)
-	article = SortedManyToManyField('Article', sorted=True, null=True, blank = True)
+	article = SortedManyToManyField('Article', sorted=True, blank = True)
 
 	def __str__(self):
 		return self.name
