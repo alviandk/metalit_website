@@ -15,7 +15,7 @@ class WriterType(DjangoObjectType):
 class ArticleType(DjangoObjectType):
     class Meta:
         model = Article
-        fields = ("id", "title", "description", "content", "slug", "image", "category", 
+        fields = ("id", "title", "description", "content", "slug", "image", "Category", 
             "author", "date_created", "date_modified")
         filter_fields = ["image"]
 
@@ -28,7 +28,7 @@ class Query(graphene.ObjectType):
     image = graphene.Field(ArticleType, id=graphene.Int(required=True))
 
     def resolve_articles(root, info):
-        return Article.objects.select_related("category").all()
+        return Article.objects.select_related("Category").all()
 
     def resolve_article(root, info, slug):
         try:
