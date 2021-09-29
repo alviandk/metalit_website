@@ -5,7 +5,7 @@ from backend.models import Category, Article, Writer
 class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
-        fields = ("id", "name", "slug")
+        fields = ("id", "name", "slug", "article")
 
 class WriterType(DjangoObjectType):
     class Meta:
@@ -21,19 +21,14 @@ class ArticleType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     articles = graphene.List(ArticleType)
-    category = graphene.List(CategoryType)
     article = graphene.Field(ArticleType, slug=graphene.String(required=True))
+    category = graphene.List(CategoryType)
+    categories = graphene.Field(CategoryType, slug=graphene.String(required=True))
     writer = graphene.Field(WriterType, name=graphene.String(required=True))
     image = graphene.Field(ArticleType, id=graphene.Int(required=True))
 
-    def resolve_image(self, info, id):
-        return Article.objects.get(id=id)
-
     def resolve_articles(root, info):
         return Article.objects.select_related("category").all()
-
-    def resolve_category(root, info):
-        return Category.objects.all()
 
     def resolve_article(root, info, slug):
         try:
@@ -41,11 +36,23 @@ class Query(graphene.ObjectType):
         except Article.DoesNotExist:
             return None
 
+    def resolve_category(root, info):
+        return Category.objects.all()
+
+    def resolve_categories(root, info, slug):
+        try:
+            return Category.objects.get(slug=slug)
+        except Category.DoesNotExist:
+            return None
+
     def resolve_writer(root, info, name):
         try:
             return Writer.objects.get(name=name)
         except Writer.DoesNotExist:
             return None
+    
+    def resolve_image(self, info, id):
+        return Article.objects.get(id=id)
 
 class Image(graphene.Mutation):
     image = graphene.Field(ArticleType)

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "graphene_django",
     "corsheaders",
     "django_filters",
+    'sortedm2m',
 ]
 
 GRAPHENE = {
