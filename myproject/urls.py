@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from revamp import views
 from .views import Home, Metalit
+from django.views.decorators.csrf import csrf_exempt
+
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
     #path("", Home.as_view(), name="home"),
@@ -29,5 +32,6 @@ urlpatterns = [
     path("term-conditions", views.term_conditions, name="term-conditions"),
     path("privacy-policy", views.privacy_policy, name="privacy-policy"),
     path("help", views.help, name="help"),
+    path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
     
 ]
