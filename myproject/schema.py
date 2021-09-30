@@ -1,4 +1,5 @@
 import graphene
+from graphene.types import Scalar
 from graphene_django import DjangoObjectType
 from backend.models import Category, Article, Writer
 
@@ -12,7 +13,24 @@ class WriterType(DjangoObjectType):
         model = Writer
         fields = ("id", "name", "picture", "email", "last_update")
 
+
+class FileField(Scalar):
+    @staticmethod
+    def serialize(value):
+        if not value:
+            return ""
+        return value.url
+
+    @staticmethod
+    def parse_literal(node):
+        return node
+
+    @staticmethod
+    def parse_value(value):
+        return value
+
 class ArticleType(DjangoObjectType):
+    image = FileField()
     class Meta:
         model = Article
         fields = ("id", "title", "description", "content", "slug", "image", "Category", 
