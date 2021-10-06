@@ -20,20 +20,15 @@ class ArticleType(DjangoObjectType):
         filter_fields = ["image"]
 
 class Query(graphene.ObjectType):
-    articles = graphene.List(ArticleType, first=graphene.Int(), skip=graphene.Int())
+    articles = graphene.List(ArticleType)
     article = graphene.Field(ArticleType, slug=graphene.String(required=True))
     category = graphene.List(CategoryType)
     categories = graphene.Field(CategoryType, slug=graphene.String(required=True))
     writer = graphene.Field(WriterType, name=graphene.String(required=True))
     image = graphene.Field(ArticleType, id=graphene.Int(required=True))
 
-    def resolve_articles(root, info, first=None, skip=None):
-        qs = Article.objects.select_related("Category").all()
-        if skip:
-            qs = qs[skip:]
-        if first:
-            qs = qs[:first]
-        return qs
+    def resolve_articles(root, info):
+        return Article.objects.select_related("Category").all()
 
     def resolve_article(root, info, slug):
         try:
