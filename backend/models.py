@@ -2,13 +2,12 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.utils import timezone
-from sortedm2m.fields import SortedManyToManyField
 
 # Create your models here
 class Category(models.Model):
 	name = models.CharField(max_length=255)
 	slug = models.CharField(max_length=255)
-	article = SortedManyToManyField('Article', sorted=True, blank = True)
+	article = models.ManyToManyField('Article', related_name='backend', null=True, blank=True)
 
 	def __str__(self):
 		return self.name
@@ -18,7 +17,7 @@ class Writer(models.Model):
 	picture = models.ImageField(null=True, blank=True, upload_to="img/picture")
 	email = models.EmailField()
 	last_update = models.DateTimeField(auto_now=True)
-	article = SortedManyToManyField('Article', sorted=True, blank = True)
+	article = models.ManyToManyField('Article', related_name='article', null=True, blank=True)
 
 	def __str__(self):
 		return self.name
