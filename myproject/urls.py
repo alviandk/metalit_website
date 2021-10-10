@@ -32,6 +32,6 @@ urlpatterns = [
     path("privacy-policy", views.privacy_policy, name="privacy-policy"),
     path("help", views.help, name="help"),
     path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    path('', include('djangorest.urls')),
+    path('api/', include('upload_cv.urls')),
     
 ]

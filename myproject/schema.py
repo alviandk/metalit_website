@@ -1,6 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
-from backend.models import Category, Article, Writer
+from blog_backend.models import Category, Article, Writer
 
 class CategoryType(DjangoObjectType):
     class Meta:

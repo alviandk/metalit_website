@@ -7,7 +7,7 @@ from django.utils import timezone
 class Category(models.Model):
 	name = models.CharField(max_length=255)
 	slug = models.CharField(max_length=255)
-	article = models.ManyToManyField('Article', related_name='backend', null=True, blank=True)
+	article = models.ManyToManyField('Article', blank=True)
 
 	def __str__(self):
 		return self.name
@@ -17,7 +17,7 @@ class Writer(models.Model):
 	picture = models.ImageField(null=True, blank=True, upload_to="img/picture")
 	email = models.EmailField()
 	last_update = models.DateTimeField(auto_now=True)
-	article = models.ManyToManyField('Article', related_name='article', null=True, blank=True)
+	article = models.ManyToManyField('Article', blank=True)
 
 	def __str__(self):
 		return self.name
@@ -33,7 +33,7 @@ class Article(models.Model):
     )
 	date_created = models.DateTimeField(auto_now_add=True)
 	author = models.ForeignKey(
-		Writer, related_name="backend", on_delete=models.CASCADE
+		Writer, related_name="writer", on_delete=models.CASCADE
     )
 	date_modified = models.DateTimeField(auto_now=True)
 

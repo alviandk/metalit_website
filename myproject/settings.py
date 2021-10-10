@@ -48,15 +48,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ckeditor',
-
     'user_forms',
     'vacancy',
-    'revamp',
-    'backend',
     "graphene_django",
     "corsheaders",
-    'djangorest',
     'rest_framework',
+
+    'revamp',
+    'blog_backend',
+    'upload_cv',
 ]
 
 GRAPHENE = {
