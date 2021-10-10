@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     'backend',
     "graphene_django",
     "corsheaders",
-    "django_filters",
-    'sortedm2m',
+    'djangorest',
+    'rest_framework',
 ]
 
 GRAPHENE = {
