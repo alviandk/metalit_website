@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BackendConfig(AppConfig):
+class UploadCvConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'backend'
+    name = 'upload_cv'

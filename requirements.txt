@@ -14,8 +14,6 @@ django-environ==0.4.5
 django-filter==2.4.0
 django-js-asset==1.2.2
 django-oss-storage==1.1.1
-django-sortedm2m==3.0.2
-django-sortedone2many==0.2.2
 graphene==2.1.9
 graphene-django==2.15.0
 graphql-core==2.3.2
