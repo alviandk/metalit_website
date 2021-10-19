@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     "graphene_django",
     "corsheaders",
     'rest_framework',
-
     'revamp',
     'blog_backend',
     'upload_cv',
