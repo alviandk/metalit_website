@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     "graphene_django",
     "corsheaders",
     'rest_framework',
-
     'revamp',
     'blog_backend',
     'upload_cv',
@@ -203,6 +202,7 @@ MESSAGE_TAGS = {
 }
 
 BLOG_URL = env('BLOG_URL')
+
 
 #CORS_ALLOWED_ORIGINS = [
 #    "http://localhost:3000",
