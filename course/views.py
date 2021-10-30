@@ -19,13 +19,16 @@ class CourseView(APIView):
 
 	def get(self, request, id=None):
 		if id:
-			file = Course.objects.filter(id=id)
-			serializer = CourseSerializer(file, many=True)
+			file = get_object_or_404(Course, id=id)
+			serializer = CourseSerializer(file)
 			return Response(serializer.data, status=status.HTTP_200_OK)
 
 		files = Course.objects.all()
-		serializer = CourseSerializer(files, many=True)
-		return Response(serializer.data, status=status.HTTP_200_OK)
+		if files.exists():
+			serializer = CourseSerializer(files, many=True)
+			return Response(serializer.data, status=status.HTTP_200_OK)
+		else:
+			return Response({"detail":"Data tidak ditemukan."}, status=status.HTTP_404_NOT_FOUND)
 
 	def delete(self, request, id=None):
 		item = get_object_or_404(Course, id=id)
