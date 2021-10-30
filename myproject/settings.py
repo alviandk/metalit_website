@@ -209,3 +209,26 @@ BLOG_URL = env('BLOG_URL')
 #    "http://127.0.0.1:3000"
 #]
 CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGIN')
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'div',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'autogrow',
+            # 'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath',
+            'codesnippet'
+        ]),
+    },
+}
