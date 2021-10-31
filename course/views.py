@@ -33,4 +33,4 @@ class CourseView(APIView):
 	def delete(self, request, id=None):
 		item = get_object_or_404(Course, id=id)
 		item.delete()
-		return Response({"status": "success", "data": "Item Deleted"})
+		return Response({"status": "Berhasil", "data": "Item telah dihapus"})
