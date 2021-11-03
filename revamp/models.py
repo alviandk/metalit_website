@@ -24,6 +24,7 @@ class Pelatihan(models.Model):
     def __str__(self):
         return self.nama
 
+
 class QA(models.Model):
     question = models.CharField(max_length=255)
     answere = RichTextField()
@@ -31,8 +32,10 @@ class QA(models.Model):
     def __str__(self):
         return self.question
 
+
 class PrivacyPolicy(models.Model):
     description = RichTextField()
+
 
 class TermCondition(models.Model):
     Description = RichTextField() 
