@@ -3,5 +3,5 @@ from .views import CourseView
 
 urlpatterns = [
     path('course/', CourseView.as_view()),
-    path('course/<int:id>', CourseView.as_view())
+    path('course/<slug>', CourseView.as_view())
 ]

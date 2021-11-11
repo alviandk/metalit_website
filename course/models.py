@@ -22,3 +22,6 @@ class Syllabus(models.Model):
 	objectives = RichTextField()
 	technologies = RichTextField()
 	prerequisites = RichTextField()
+
+	def __str__(self):
+		return self.course.course_name
