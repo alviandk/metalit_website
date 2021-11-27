@@ -74,12 +74,12 @@ class CategoryType(DjangoObjectType):
 class Query(graphene.ObjectType):
     category = graphene.List(CategoryType)
     node = graphene.relay.Node.Field()
-    articles =  DjangoFilterConnectionField(ArticleNode , filterset_class=ArticleFilter)
+    articles =  DjangoFilterConnectionField(ArticleNode,
+        filterset_class=ArticleFilter, name=graphene.String())
     article = graphene.Field(ArticleType, slug=graphene.String(required=True))
     categories = graphene.Field(CategoryType, slug=graphene.String(required=True))
-    search = graphene.List(ArticleType, name=graphene.String(), category_id=graphene.ID())  
 
-    def resolve_search(self, info, name=None,category_id=None, **kwargs):
+    def resolve_articles(self, info, name=None,category_id=None, **kwargs):
         if name:
             filter = (
                 Q(title__icontains=name) |
