@@ -15,9 +15,9 @@ class CourseView(APIView):
 		else:
 			return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-	def get(self, request, id=None):
-		if id:
-			file = get_object_or_404(Course, id=id)
+	def get(self, request, slug=None):
+		if slug:
+			file = get_object_or_404(Course, slug=slug)
 			serializer = CourseSerializer(file)
 			return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -28,7 +28,7 @@ class CourseView(APIView):
 		else:
 			return Response({"detail":"Data tidak ditemukan."}, status=status.HTTP_404_NOT_FOUND)
 
-	def delete(self, request, id=None):
-		item = get_object_or_404(Course, id=id)
+	def delete(self, request, slug=None):
+		item = get_object_or_404(Course, slug=slug)
 		item.delete()
 		return Response({"status": "Berhasil", "data": "Item telah dihapus"})
