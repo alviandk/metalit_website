@@ -62,6 +62,7 @@ class ArticleFilter(django_filters.FilterSet):
             "author", "date_created", "date_modified")
 
 class ArticleNode(DjangoObjectType):
+    image = FileField()
     class Meta:
         model = Article
         interfaces = (graphene.relay.Node , )
