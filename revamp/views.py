@@ -27,7 +27,7 @@ def course(request):
 		form = PelatihantForm(request.POST)
 		if form.is_valid():
 			form.save()
-			messages.success(request, 'pesan berhasil terkirim')
+			messages.success(request, 'Pengisian formulir berhasil disimpan')
 			return render(request, 'revamp/course.html')
 		else:
 			messages.error(request, 'pesan tidak berhasil terkirim')

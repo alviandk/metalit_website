@@ -6,9 +6,9 @@ def file_size(value):
     types = ['application/pdf']
     if value.content_type in types:
     	if value.size > limit:
-    		raise ValidationError('File too large. Size should not exceed 3 MB.')
+    		raise ValidationError('File terlalu besar. Ukuran tidak boleh melebihi 3 MB.')
     else:
-    	raise ValidationError('Filetype must .pdf')
+    	raise ValidationError('Jenis file harus .pdf')
 
 # Create your models here.
 class MyFile(models.Model):

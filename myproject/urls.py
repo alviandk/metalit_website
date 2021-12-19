@@ -34,5 +34,6 @@ urlpatterns = [
     path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('api/', include('upload_cv.urls')),
     path("accounts/", include("allauth.urls")),
+    path('api/', include('course.urls')),
     
 ]

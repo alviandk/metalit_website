@@ -54,10 +54,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount', 
     'ckeditor',
     'corsheaders',
+    'django_filters',
     'graphene_django',
     'rest_framework',
 
     'blog_backend',
+    'course',
     'revamp',
     'upload_cv',
     'user_forms',
@@ -209,7 +211,6 @@ MESSAGE_TAGS = {
 
 BLOG_URL = env('BLOG_URL')
 
-
 #CORS_ALLOWED_ORIGINS = [
 #    "http://localhost:3000",
 #    "http://127.0.0.1:3000"
@@ -234,3 +235,25 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_ALLOW_REGISTRATION = True
 
 # LOGIN_REDIRECT_URL = 'static_page:home'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'div',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'autogrow',
+            # 'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath',
+            'codesnippet'
+        ]),
+    },
+}

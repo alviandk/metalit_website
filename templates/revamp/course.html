@@ -25,18 +25,13 @@
         <div class="biru text-white">
           <form class="py-5 px-5" method="post">  
             {% csrf_token %}
-            {% for field in form %}
-              <div class="fieldWrapper">
-                  {{ field.errors }}
-              </div>
-            {% endfor %}
             <h3 class="mb-5 text-center">Daftarkan diri Anda</h3>
 
               <div class="form-group row">
                 <label for="id_nama" class="col-sm-4 col-form-label">Nama</label>
                 <div class="col-sm-8">
                   <input 
-                    type="text" name="nama" required="" maxlength="255" id="id_nama" class="form-control mb-3"
+                    type="text" name="nama" required maxlength="255" id="id_nama" class="form-control mb-3"
                   >
                 </div>
               </div>
@@ -53,8 +48,8 @@
                   <legend class="col-form-label col-sm-4 pt-0">Jenis Kelamin</legend>
                   <div class="col-sm-8">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gender" value="1" class="custom-control-input custom-control-label" required="" id="id_0" checked>
-                      <label class="form-check-label" for="id_0">Laki_laki</label>
+                      <input class="form-check-input" type="radio" name="gender" value="1" class="custom-control-input custom-control-label" required="" id="id_0">
+                      <label class="form-check-label" for="id_0">Laki-laki</label>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="gender" value="2" class="custom-control-input custom-control-label" required="" id="id_1">
