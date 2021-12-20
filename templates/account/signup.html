@@ -1,0 +1,95 @@
+{% extends "revamp/base.html" %}
+{% load i18n %}
+{% load account %}
+
+{% block title %} - Signup{% endblock %}
+
+{% block page_content %}
+<section class="py-5">
+  <div class="container px-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+
+        <!--Form-->
+        <div class="biru text-white">
+          <form class="py-5 px-5" method="post" action="{% url 'account_signup' %}">
+            <h3 class="mb-5 text-center">Daftar</h3>
+            {% if form.errors %}
+              {% if form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                  E-mail yang kamu masukkan sudah terdaftar di sistem kami.<br>
+                  Silakan <a href="{% url 'account_login' %}">login</a> atau 
+                  gunakan fitur <a href="{% url 'account_reset_password' %}">lupa password</a>.
+                </div>
+              {% endif %}
+              
+              {% if form.password2.errors %}
+                <div class="alert alert-danger" role="alert">
+                  Password yang kamu masukkan tidak sama dengan konfirmasi password.
+                </div>
+              {% endif %}
+              {% if form.password1.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {% if "The password is too similar to the email address." in form.password1.errors %}
+                    Password terlalu mirip dengan alamat e-mail.
+                  {% elif "This password is too short. It must contain at least 8 characters." in form.password1.errors %}
+                    Password terlalu pendek. Minimal 8 karakter.
+                  {% elif "This password is too common." in form.password1.errors %}
+                    Password terlalu umum. Rawan dijebol hacker.
+                  {% else %}
+                    {{form.password1.errors}}
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endif %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+            <div class="form-group row">
+              <label for="inputEmail" class="visually-hidden">Alamat e-mail</label>
+              <input type="email" {% if form.email.value %}value="{{ form.email.value }}"{% endif %} name="email" id="inputEmail" class="form-control mb-3" placeholder="Alamat e-mail" required autofocus>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="inputPassword" class="visually-hidden">Password</label>
+              <input type="password" name="password1"  id="inputPassword" class="form-control mb-3" placeholder="Password" required>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="reinputPassword" class="visually-hidden">Konfirmasi Password</label>
+              <input type="password" name="password2" id="reinputPassword" class="form-control mb-3" placeholder="Konfirmasi Password" required>
+            </div>
+            <div class="form-group mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" value="agreement" required/>
+                <label class="form-check-label" for="gridCheck">
+                  Saya setuju dengan 
+                  <a class="text-reset" href="{% url 'term-conditions' %}">ketentuan penggunaan</a>
+                </label>
+              </div>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" value="agreement" required/>
+                <label class="form-check-label" for="gridCheck">
+                  Saya setuju dengan
+                  <a class="text-reset" href="{% url 'privacy-policy' %}">kebijakan privasi</a>
+                </label>
+              </div>
+           </div>
+            <hr/>
+            <div class="form-group row">
+              <button class="btn btn-light" type="submit">Masuk</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="text-center">
+          <p>Sudah punya akun? Silahkan
+            <a class="btn btn-link" href="{{ login_url }}"><u>Masuk disini</u></a>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
