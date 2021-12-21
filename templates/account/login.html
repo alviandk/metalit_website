@@ -16,8 +16,9 @@
             <h3 class="mb-5 text-center">Login</h3>
             {% csrf_token %}
             {% if form.errors %}
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                   Alamat e-mail dan atau password yang kamu masukkan tidak sesuai.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endif %}
             {% if redirect_field_value %}
