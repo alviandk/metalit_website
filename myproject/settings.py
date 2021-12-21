@@ -234,7 +234,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_ALLOW_REGISTRATION = True
 
-# LOGIN_REDIRECT_URL = 'static_page:home'
+LOGIN_REDIRECT_URL = '/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
