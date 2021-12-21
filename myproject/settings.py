@@ -46,18 +46,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django_filters",
+    'django.contrib.sites',
 
+    # 3rd party
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
     'ckeditor',
+    'corsheaders',
+    'django_filters',
+    'graphene_django',
+    'rest_framework',
+
+    'blog_backend',
+    'course',
+    'revamp',
+    'upload_cv',
     'user_forms',
     'vacancy',
-    "graphene_django",
-    "corsheaders",
-    'rest_framework',
-    'revamp',
-    'blog_backend',
-    'upload_cv',
-    'course',
 ]
 
 GRAPHENE = {
@@ -211,6 +217,24 @@ BLOG_URL = env('BLOG_URL')
 #]
 CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGIN')
 
+# Authentication
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "Be-Py"
+
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_ALLOW_REGISTRATION = True
+
+# LOGIN_REDIRECT_URL = 'static_page:home'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
