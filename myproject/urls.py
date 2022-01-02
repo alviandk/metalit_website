@@ -25,7 +25,7 @@ urlpatterns = [
     #path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
     path("", views.home, name="home"),
-    path("dasboard", views.dasboard, name="dasboard"),
+    path("dashboard", views.dashboard, name="dashboard"),
     path("about", views.about, name="about"),
     path("contact", views.contact, name="contact"),
     path("course", views.course, name="course"),
