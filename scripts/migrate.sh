@@ -8,3 +8,4 @@ then
 else
     echo "no requirements.txt"
 fi
+./manage.py migrate
