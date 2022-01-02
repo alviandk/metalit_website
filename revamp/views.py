@@ -6,6 +6,9 @@ from .models import QA, PrivacyPolicy, TermCondition
 def home(request):
 	return render(request, 'revamp/home.html')
 
+def dashboard(request):
+	return render(request, 'revamp/dashboard.html')
+
 def about(request):
 	return render(request, 'revamp/about.html')
 
