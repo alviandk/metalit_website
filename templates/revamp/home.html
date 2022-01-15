@@ -7,61 +7,49 @@
     <div class="container px-5">
       <div class="row gx-5 align-items-center justify-content-center">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
-          <div class="my-5 text-center text-xl-start">
-            <p class="lead fw-normal mb-2">Metamorfosa . Talent . IT</p>
-            <h1 class="display-5 fw-bolder mb-2">Transformasikan dirimu jadi lebih baik</h1>
-            <p class="lead fw-normal mb-4">Talent platform dengan skill standar industri masa kini</p>
+          <div class="my-5 text-xl-start">
+            <p class="lead fw-normal mb-2">Metalit</p>
+            <h1 class="display-5 fw-bolder mb-2">Membantu talenta IT bersaing dengan skill standar industri</h1>
+            <p class="lead fw-normal mb-4">Transformasikan dirimu jadi lebih baik</p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'course' %}">Daftarkan diri Anda</a>
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
             </div>
           </div>
         </div>
-        <div class="col-xl-5 col-xxl-6 text-center">
-          <img class="img-fluid rounded-3 my-5" src='{% static "assets/Group 131.svg" %}'/>
+        <div class="col-xl-5 col-xxl-6">
+          <img class="img-fluid" src="{% static 'images/pair.svg' %}"/>
+          <a href="https://storyset.com/web">Didesain oleh Storyset</a>
         </div>
       </div>
     </div>
   </header>
 
   <!--My Work section-->
-  <section class="py-5 bg-light">
+  <section class="py-5">
     <div class="container px-5 my-5">
-      <div class="row gx-5">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h2 class="fw-bolder mb-0">Cara kerja kami</h2>
+      <div class="row gx-5 align-items-center">
+        
+       
+
+        <div class="col-lg-6 mb-5">
+          <img class="img-fluid" src="{% static 'images/yoho.png' %}"/>
+          <a href="https://www.freepik.com/vectors/abstract">Didesain oleh vectorjuice</a>
         </div>
-        <div class="col-lg-8">
-          <div class="row gx-5 row-cols-1 row-cols-md-2">
-            <div class="col mb-5 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_314.png">
-              </div>
-              <h2 class="h5">Pelatihan</h2>
-              <p class="mb-0">Para pencari kerja diberikan pelatihan hard skill dan soft skill di bidang IT.</p>
-            </div>
-            <div class="col mb-5 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group.png">
-              </div>
-              <h2 class="h5">Kerjasama dengan perusahaan</h2>
-              <p class="mb-0">Metalit menjalin kerjasama dengan perusahaan untuk menyalurkan pencari kerja</p>
-            </div>
-            <div class="col mb-5 mb-md-0 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_315.png">
-              </div>
-              <h2 class="h5">Proses perekrutan</h2>
-              <p class="mb-0">Metalit menyediakan list kandidat pencari kerja sesuai dengan permintaan perusahaan.</p>
-            </div>
-            <div class="col h-100">
-              <div class="feature mb-2">
-                <img class='img95' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_316.png">
-              </div>
-              <h2 class="h5">Evaluasi</h2>
-              <p class="mb-0">Pencari kerja yang diterima oleh perusahaan relasi melakukan evaluasi bersama Metalit selama masa percobaan</p>
-            </div>
+
+        <div class="col-lg-6 px-2">
+          <h3 class="mb-4">Mau jadi talenta IT sesuai standar industri?</h3>
+          <p>
+            400.000 Sarjana IT tidak memenuhi standar indsutri 
+            padahal kebutuhan talenta IT mencapai 600.000 per tahun.
+          </p>
+          <p class="mb-5">
+            Yuk gabung metalit, belajar skill IT yang sesuai standar industri.
+          </p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -70,23 +58,23 @@
   <section class="py-5">
     <div class="container px-5 my-5">
       <div class="row gx-5 align-items-center">
-        <div class="col-lg-6">
-          <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "assets/Group 277.svg" %}'/>
-        </div>
+
         <div class="col-lg-6 px-2">
-          <h2 class="fw-bolder mb-5">Kenapa memilih kami?</h2>
-          <dl>
-            <dt>Pelatihan industri masa kini</dt>
-            <dd>Materi pelatihan menggunakan metode dan teknologi sesuai dengan standar industri masa kini seperti scrum, git, automation test, dll</dd>
-          </dl>
-          <dl>
-            <dt>Harga termurah</dt>
-            <dd>Metalit memberikan harga yang jauh lebih murah jika dibandingkan platform lain dengan bidang sejenis</dd>
-          </dl>
-          <dl>
-            <dt>Mengerjakan proyek riil</dt>
-            <dd>Di akhir pelatihan para pencari kerja dibentuk menjadi tim untuk mengerjakan project real yang bisa dijadikan sebagai portofolio</dd>
-          </dl>                                                
+          <h3 class="mb-4">Merasa tidak ada perkembangan karir?</h3>
+          <p>
+            Idealnya, anak IT bisa naik gaji 30% per 2 tahun.
+            Level senioritas, skill ataupun jabatan harusnya pun ada peningkatan.
+          </p>
+          <p class="mb-5">
+            Yuk gabung metalit untuk meningkatkan karirmu.
+          </p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3 mb-5" href="{% url 'account_signup' %}">Daftar</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid" src="{% static 'images/yuhu.jpg' %}"/>
+          <a href="http://www.freepik.com">Didesain oleh pch.vector</a>
         </div>
       </div>
     </div>
