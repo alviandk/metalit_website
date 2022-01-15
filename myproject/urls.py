@@ -29,6 +29,7 @@ urlpatterns = [
     path("about", views.about, name="about"),
     path("contact", views.contact, name="contact"),
     path("course", views.course, name="course"),
+    path("testimoni", views.testimoni, name="testimoni"),
     path("term-conditions", views.term_conditions, name="term-conditions"),
     path("privacy-policy", views.privacy_policy, name="privacy-policy"),
     path("help", views.help, name="help"),

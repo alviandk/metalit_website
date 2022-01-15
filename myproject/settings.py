@@ -179,7 +179,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'django_oss_storage.backends.OssStaticStorage'
+#STATICFILES_STORAGE = 'django_oss_storage.backends.OssStaticStorage'
 
 DEFAULT_FILE_STORAGE = 'django_oss_storage.backends.OssMediaStorage'
 

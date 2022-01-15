@@ -1,0 +1,196 @@
+{% load static %}
+{% load navigation %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Transformasikan dirimu jadi lebih baik"/>
+        <title>Metalit | Transfromasikan Dirimu Jadi Lebih Baik{% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/images/favicon_metalit.png"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" type="text/css" 
+          href="{% static 'asset/vendor/font-awesome/css/all.min.css' %}">
+        <link rel="stylesheet" type="text/css" 
+          href="{% static 'asset/vendor/bootstrap-icons/bootstrap-icons.csss' %}">
+        <link rel="stylesheet" type="text/css" 
+          href="{% static 'asset/vendor/tiny-slider/tiny-slider.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'asset/vendor/aos/aos.css' %}">
+        <!-- Theme CSS -->
+        <link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'asset/css/style.css' %}">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KJ3LXW826"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-0KJ3LXW826');
+        </script>
+    </head>
+
+    <body class="d-flex flex-column h-100">
+        <!-- main-->
+        <main class="flex-shrink-0">
+          <!--Navigasi-->
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img class='img50' src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png">
+              </a>
+              <!--toggler-->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'course' %}" href="{% url 'course' %}">Pelatihan</a></li>
+                  <li class="nav-item text-uppercase px-2"><a class="nav-link" href="{{react_blog_url}}">Blog</a></li>
+                  <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'account_login' %}" href="{% url 'account_login' %}">Login</a></li>
+                  <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'account_signup' %}" href="{% url 'account_signup' %}">Daftar</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+		<section class="pt-5 pb-0 mb-5">
+			<div class="container">
+				<div class="row g-0 g-lg-5">
+
+					<div class="col-lg-4">
+			            <div class="card shadow p-2 mb-4 text-center">
+			              <div class="rounded-3">
+			                <img src='{% static "asset/images/instructor/07.jpg" %}' class="card-img" alt="course image">
+			              </div>
+			              <!-- Card body -->
+			              <div class="card-body px-3">
+			                <!-- Rating -->
+			                <ul class="list-inline">
+			                  <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+			                  <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+			                  <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+			                  <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+			                  <li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
+			                  <li class="list-inline-item ms-2 h6 fw-light mb-0">4.5/5.0</li>
+			                </ul>
+			                <!-- Social media button -->
+			                <ul class="list-inline mb-0">
+			                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+			                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-instagram-gradient" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+			                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+			                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+			                </ul>
+			              </div>
+		            	</div>
+					</div><!-- Left sidebar END -->
+						
+					<div class="col-lg-8">
+						<!-- Title -->
+						<h5 class="mb-0">Hi, I am</h5>
+						<h1 class="mb-0">Lori Stevens</h1>
+						<p>Graphic Designer</p>
+						<!-- Content -->
+						<p class="mt-4">Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do.</p>
+						<p>We focus a great deal on the understanding of behavioral psychology and influence triggers which are crucial for becoming a well-rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn’t going to get the job done so that’s why this course is packed with practical hands-on examples that you can follow step by step.</p>
+						<!-- Personal info -->
+						<ul class="list-group list-group-borderless">
+							<li class="list-group-item px-0">
+								<span class="h6 fw-light"><i class="fas fa-fw fa-map-marker-alt text-primary me-1 me-sm-3"></i>Address:</span>
+								<span>2002 Horton Ford Rd, Eidson, TN, 37731</span>
+							</li>
+							<li class="list-group-item px-0">
+								<span class="h6 fw-light"><i class="fas fa-fw fa-envelope text-primary me-1 me-sm-3"></i>Email:</span>
+								<span>example@gmail.com</span>
+							</li>
+							<li class="list-group-item px-0">
+								<span class="h6 fw-light"><i class="fas fa-fw fa-headphones text-primary me-1 me-sm-3"></i>Phone number:</span>
+								<span>+896-789-546</span>
+							</li>
+							<li class="list-group-item px-0">
+								<span class="h6 fw-light"><i class="fas fa-fw fa-globe text-primary me-1 me-sm-3"></i>Website:</span>
+								<span>https://eduport.webestica.com/</span>
+							</li>
+						</ul>
+					</div><!-- Right sidebar END -->
+
+				</div><!-- Row END -->
+			</div>
+		</section>
+
+        </main>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 text-white">
+          <div class="footer-middle">
+            <div class="container px-5 my-5">
+                <div class="row mb-3">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="footer-pad">
+                      <ul class="list-unstyled">
+                        <li>
+                          <a class="text-reset text-decoration-none" href="{% url 'help' %}">Pusat Bantuan</a>
+                        </li>
+                        <li>
+                        <a class="text-reset text-decoration-none" href="{% url 'about' %}">Tentang Kami</a>
+                        </li>
+                        <li>
+                          <a class="text-reset text-decoration-none" href="{% url 'contact' %}">Hubungi Kami</a>
+                        </li>
+                        <li>
+                          <a class="text-reset text-decoration-none" href="{% url 'term-conditions' %}">Syarat dan Ketentuan</a>
+                        </li>
+                        <li>
+                          <a class="text-reset text-decoration-none" href="{% url 'privacy-policy' %}">Kebijakan Privasi</a>
+                        </li>
+                       </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6"></div>
+                  <div class="col-md-3 col-sm-6"></div>
+                  <div class="col-md-3">
+                    <p>Jl. Bangka Raya No.17, RT.13/RW.1, Bangka,Kec. Mampang Prpt, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12730 <br> Telp. 0857-7979-3635</p>
+                  </div>   
+                </div>
+                <div class="row">
+                    <div class="col-md-12 copy">
+                        <p class="text-center">All Rights Reserved | Copyright © 2022 | PT Metamorfosa Teknologi Berdikari</p>
+                        <div class="text-center">
+                            <span class="mx-2">
+                                <a href="https://twitter.com/metalit_id" target="_blank"><i class="fab fa-twitter"></i></a>
+                            </span>
+                            <span class="mx-2">
+                                <a href="https://www.facebook.com/Metalit-107151784977073" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </span>
+                            <span class="mx-2">
+                                <a href="https://www.instagram.com/metalit.id" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </span>
+                            <span class="mx-2">
+                                <a href="https://www.linkedin.com/company/metalit-id" target="_blank"><i class="fab fa-linkedin"></i></a>  
+                            </span>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="{% static 'asset/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Vendors -->
+        <script src="{% static 'asset/vendor/purecounterjs/dist/purecounter_vanilla.js' %}"></script>
+        <script src="{% static 'asset/vendor/tiny-slider/tiny-slider.js' %}"></script>
+        <script src="{% static 'asset/vendor/aos/aos.js' %}"></script>
+
+        <!-- Template Functions -->
+        <script src="asset/js/functions.js"></script>
+    </body>
+</html>
