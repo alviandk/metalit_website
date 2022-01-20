@@ -40,8 +40,21 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'course' %}" href="{% url 'course' %}">Pelatihan</a></li>
                   <li class="nav-item text-uppercase px-2"><a class="nav-link" href="{{react_blog_url}}">Blog</a></li>
-                  <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'account_login' %}" href="{% url 'account_login' %}">Login</a></li>
-                  <li class="nav-item text-uppercase px-2"><a class="nav-link {% active request.path 'account_signup' %}" href="{% url 'account_signup' %}">Daftar</a></li>
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item text-uppercase px-2">
+                    <a class="nav-link" href="/dashboard">
+                      Dashboard</a>
+                    </li>
+                  {% else %}
+                  <li class="nav-item text-uppercase px-2">
+                    <a class="nav-link {% active request.path 'account_login' %}" href="{% url 'account_login' %}">
+                      Login</a>
+                    </li>
+                  <li class="nav-item text-uppercase px-2">
+                    <a class="nav-link {% active request.path 'account_signup' %}" href="{% url 'account_signup' %}">
+                      Daftar</a>
+                    </li>
+                    {% endif %}
                 </ul>
               </div>
             </div>
