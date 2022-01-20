@@ -1,6 +1,8 @@
 {% extends "revamp/base.html" %}
 {% load i18n %}
 {% load account %}
+{% load socialaccount %}
+
 
 {% block title %} - Login{% endblock %}
 
@@ -37,6 +39,7 @@
               <button class="btn btn-light" type="submit">Masuk</button>
             </div>
             <hr class="hr"/>
+            <a href="{% provider_login_url 'google' %}" class="link-light">Masuk dengan Google</a>
             <p class="text-center">
               <a class="btn btn-link text-reset" href="{% url 'account_reset_password' %}">Lupa kata sandi?</a>
             </p>
