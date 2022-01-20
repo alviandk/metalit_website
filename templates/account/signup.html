@@ -1,6 +1,8 @@
 {% extends "revamp/base.html" %}
 {% load i18n %}
 {% load account %}
+{% load socialaccount %}
+
 
 {% block title %} - Signup{% endblock %}
 
@@ -79,18 +81,22 @@
               </div>
            </div>
             <hr/>
+            <a href="{% provider_login_url 'google' %}" class="link-light">Daftar dengan Google</a>
             <div class="d-flex justify-content-end">
-              <button class="btn btn-light" type="submit">Masuk</button>
+              <button class="btn btn-light" type="submit">Submit</button>
             </div>
           </form>
         </div>
+        
 
         <div class="text-center">
           <p>Sudah punya akun? Silahkan
             <a class="btn btn-link" href="{{ login_url }}"><u>Masuk disini</u></a>
           </p>
         </div>
+        
 
+        
 
       </div>
     </div>
