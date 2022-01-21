@@ -15,7 +15,16 @@
         <!--Form-->
         <div class="biru text-white">
           <form class="py-5 px-5" method="POST" action="{% url 'account_login' %}" autocomplete="off">
-            <h3 class="mb-5 text-center">Login</h3>
+            <h3 class="mb-4 text-center">Login</h3>
+            <div class="row mb-3">
+              <a class="btn btn-light" 
+                href="{% provider_login_url 'google' %}">
+                <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Masuk dengan Google
+              </a>
+            </div>
+            <div class="row mb-2">
+              <p  class="text-center">--- atau ---</p>
+            </div>
             {% csrf_token %}
             {% if form.errors %}
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -39,7 +48,7 @@
               <button class="btn btn-light" type="submit">Masuk</button>
             </div>
             <hr class="hr"/>
-            <a href="{% provider_login_url 'google' %}" class="link-light">Masuk dengan Google</a>
+      
             <p class="text-center">
               <a class="btn btn-link text-reset" href="{% url 'account_reset_password' %}">Lupa kata sandi?</a>
             </p>
