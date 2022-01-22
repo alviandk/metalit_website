@@ -7,7 +7,8 @@ def home(request):
 	return render(request, 'revamp/home.html')
 
 def dashboard(request):
-	return render(request, 'revamp/dashboard.html')
+	# return render(request, 'revamp/dashboard.html')
+	return render(request, 'revamp/coming_soon.html')
 
 def about(request):
 	return render(request, 'revamp/about.html')
@@ -26,17 +27,18 @@ def contact(request):
 	return render(request, 'revamp/contact.html', context)
 
 def course(request):
-	if request.method == 'POST':
-		form = PelatihantForm(request.POST)
-		if form.is_valid():
-			form.save()
-			messages.success(request, 'Pengisian formulir berhasil disimpan')
-			return render(request, 'revamp/course.html')
-		else:
-			messages.error(request, 'pesan tidak berhasil terkirim')
-	form = PelatihantForm()
-	context = {'form': form}
-	return render(request, 'revamp/course.html', context)
+	# if request.method == 'POST':
+	# 	form = PelatihantForm(request.POST)
+	# 	if form.is_valid():
+	# 		form.save()
+	# 		messages.success(request, 'Pengisian formulir berhasil disimpan')
+	# 		return render(request, 'revamp/course.html')
+	# 	else:
+	# 		messages.error(request, 'pesan tidak berhasil terkirim')
+	# form = PelatihantForm()
+	# context = {'form': form}
+	# return render(request, 'revamp/course.html', context)
+	return render(request, 'revamp/coming_soon.html')
 
 def term_conditions(request):
 	context = {}

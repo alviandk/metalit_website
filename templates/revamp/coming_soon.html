@@ -1,0 +1,64 @@
+{% extends "revamp/base.html" %}
+{% load static %}
+
+{% block title %} - Pelatihan{% endblock %}
+
+{% block page_content %}
+<section class="py-4">
+
+	<!-- <div class="container position-relative mb-5">
+        
+    </div> -->
+
+	<div class="container position-relative">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-lg-7">
+				<!-- Title -->
+				<h1 class="display-5 fw-bolder mb-4">Selamat, kamu sudah sampai sejauh ini!</h1>
+                
+                {% if request.user.is_authenticated %}
+                <p class="mb-3">
+                    Kami akan memberi tahu kamu saat fitur sudah siap 
+                    
+                </p>
+                {% else %}
+            
+                    <p class="mb-3">
+                        Daftarkan dirimu untuk belajar skill standar industri lebih awal saat fitur sudah siap 
+                    </p>
+                    <div class="mb-5 d-grid d-sm-flex justify-content-sm-center justify-content-xl-start">
+                        <a class="btn btn-primary px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+                    </div>
+                {% endif %}
+
+				<!-- Progress bar -->
+				<div class="overflow-hidden">
+                    <p class="text-muted">Progres pengembangan</p>
+                    <div class="progress progress-md progress-percent-bg ">
+                        <div class="progress-bar progress-bar-striped bg-blue aos" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                            <span class="progress-percent text-white">85%</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+			</div>
+
+			<div class="col-lg-5 text-center">
+				<!-- Image -->
+				<img src="{% static 'coming-soon.svg' %} " class="img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+    <!-- <div class="container position-relative">
+        <div class="overflow-hidden">
+            <p class="mb-2 h6 fw-light text-start">Progress pengembangan</p>
+            <div class="progress progress-md progress-percent-bg ">
+                <div class="progress-bar progress-bar-striped bg-blue aos" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                    <span class="progress-percent text-white">85%</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</section>
+{% endblock %}
