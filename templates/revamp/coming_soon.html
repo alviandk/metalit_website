@@ -18,13 +18,15 @@
                 
                 {% if request.user.is_authenticated %}
                 <p class="mb-3">
+                    Terima kasih telah mendaftar!<br> 
                     Kami akan memberi tahu kamu saat fitur sudah siap 
                     
                 </p>
                 {% else %}
             
                     <p class="mb-3">
-                        Daftarkan dirimu untuk belajar skill standar industri lebih awal saat fitur sudah siap 
+                        Daftarkan dirimu untuk belajar skill standar industri lebih awal!<br> 
+                        Kami akan memberi tahu kamu saat fitur sudah siap 
                     </p>
                     <div class="mb-5 d-grid d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn btn-primary px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
