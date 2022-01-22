@@ -14,17 +14,23 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-lg-7">
 				<!-- Title -->
-				<h1 class="display-5 fw-bolder mb-4">Selamat, kamu sudah sampai sejauh ini!</h1>
+				<h1 class="display-5 fw-bolder mb-4">
+                    {% if request.user.is_authenticated %}Terima kasih telah mendaftar!{% else %}
+                    Selamat, kamu sudah sampai sejauh ini!{% endif%}
+                    
+                </h1>
                 
                 {% if request.user.is_authenticated %}
                 <p class="mb-3">
+                    Cek inbox email kamu secara berkala ya<br> 
                     Kami akan memberi tahu kamu saat fitur sudah siap 
                     
                 </p>
                 {% else %}
             
                     <p class="mb-3">
-                        Daftarkan dirimu untuk belajar skill standar industri lebih awal saat fitur sudah siap 
+                        Daftarkan dirimu untuk belajar skill standar industri lebih awal<br> 
+                        Kami akan memberi tahu kamu saat fitur sudah siap 
                     </p>
                     <div class="mb-5 d-grid d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn btn-primary px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
