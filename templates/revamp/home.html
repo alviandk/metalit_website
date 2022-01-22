@@ -12,7 +12,9 @@
             <h1 class="display-5 fw-bolder mb-2">Membantu talenta IT bersaing dengan skill standar industri</h1>
             <p class="lead fw-normal mb-4">Transformasikan dirimu jadi lebih baik</p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+              {% if not request.user.is_authenticated %}
               <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+              {% endif %}
               <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
             </div>
           </div>
@@ -47,8 +49,10 @@
             Yuk gabung metalit, belajar skill IT yang sesuai standar industri.
           </p>
           <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
-            <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
+            {% if not request.user.is_authenticated %}
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+            {% endif %}
+              <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
           </div>
         </div>
 
@@ -71,8 +75,10 @@
             Yuk gabung metalit untuk meningkatkan karirmu.
           </p>
           <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start mb-5">
-            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
-            <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
+            {% if not request.user.is_authenticated %}
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+            {% endif %}
+              <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
           </div>
         </div>
         <div class="col-lg-6">
@@ -144,8 +150,8 @@
       </div>
     </div>
   </div>
-  <div class="py-8 py-lg-18">
-    <div class="container">
+  <div class="py-5 py-lg-18">
+    <div class="container mb-5">
       <div class="row mb-6 align-items-center justify-content-center">
         <div class="col-md-10">
           <div class="row align-items-center ">
@@ -157,7 +163,8 @@
                 <br>Akan membantu kamu belajar skill standar industri
               </h3>
               <p class=" text-muted">
-                Saya akan membagikan pengalaman yang saya dapat dan telah berhasil diterapkan ke murid-murid sebelumnya.
+                Saya akan membagikan pengalaman yang saya dapat dan telah berhasil 
+                diterapkan ke murid-murid sebelumnya
               </p>
             </div> <div class="offset-xl-1 col-xl-5 col-lg-5 col-12 mb-6 mb-lg-0 order-lg-2 text-center ">
               <img src="https://alvian-personal-website.oss-ap-southeast-5.aliyuncs.com/media/unnamed2.png" alt="" height="220px" >
@@ -170,13 +177,13 @@
     </div>
   </div>
   <!--our program-->
-  <section class="py-5">
+  <!-- <section class="py-5">
     <div class="container px-5 my-5">
       <div class="text-center mb-5">
         <h1 class="fw-bolder">Program kami</h1>
-        <!--
+        
         <p class="lead fw-normal text-muted mb-0">laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
-        -->
+       
       </div>
 
       <div class="row gx-5 content-center">
@@ -218,5 +225,5 @@
           </div>
         </div>
     </div>
-  </section>
+  </section> -->
 {% endblock %}
