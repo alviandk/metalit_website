@@ -14,7 +14,11 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-lg-7">
 				<!-- Title -->
-				<h1 class="display-5 fw-bolder mb-4">Terima kasih telah mendaftar!</h1>
+				<h1 class="display-5 fw-bolder mb-4">
+                    {% if request.user.is_authenticated %}Terima kasih telah mendaftar!{% else %}
+                    Selamat, kamu sudah sampai sejauh ini!{% endif%}
+                    
+                </h1>
                 
                 {% if request.user.is_authenticated %}
                 <p class="mb-3">
