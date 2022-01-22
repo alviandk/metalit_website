@@ -8,11 +8,12 @@
       <div class="row gx-5 align-items-center justify-content-center">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
           <div class="my-5 text-xl-start">
-            <p class="lead fw-normal mb-2">Metalit</p>
+            <!-- <p class="lead fw-normal mb-2">metalit</p> -->
             <h1 class="display-5 fw-bolder mb-2">Membantu talenta IT bersaing dengan skill standar industri</h1>
             <p class="lead fw-normal mb-4">Transformasikan dirimu jadi lebih baik</p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
               <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+              <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
             </div>
           </div>
         </div>
@@ -47,6 +48,7 @@
           </p>
           <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
             <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+            <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
           </div>
         </div>
 
@@ -68,8 +70,9 @@
           <p class="mb-5">
             Yuk gabung metalit untuk meningkatkan karirmu.
           </p>
-          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-            <a class="btn btn-primary btn-lg px-4 me-sm-3 mb-5" href="{% url 'account_signup' %}">Daftar</a>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start mb-5">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Daftar</a>
+            <!-- <a class="btn btn-link text-decoration-none btn-lg px-4 me-sm-3" href="#">Eksplore Materi</a> -->
           </div>
         </div>
         <div class="col-lg-6">
@@ -80,8 +83,69 @@
     </div>
   </section>
 
+  <div class="py-5">
+    <div class="container px-5 my-5">
+      <div class="text-center mb-5">
+        <h1 class="fw-bolder">Kisah Sukses</h1>
+        <p class=" text-muted mb-0">Kesuksesan murid kami setelah belajar bersama metalit</p>
+      </div>
+      <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-3 justify-content-center">
+        <div class="col mb-5 mb-5 mb-xl-0">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">
+                <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png">
+              </h4>
+              <p>
+                Naik gaji 30% setelah bersama metalit belajar skill python, js, git, sql dan 
+                ci/cd sampai website bisa diakses melalui internet 
+              
+              </p>                                   
+              <hr>
+              <div class="row">
+                <div class="col-md-2">
+                  <img class="avatar-img rounded-circle" src="{% static 'dea.jpg' %}">
+                </div>
+                <div class="col-md-10 px-5 col-sm-0">
+                  <div class="profile">
+                    <h6 class="cust-name">Dea Dania</h6>
+                    <p class="cust-profession">Software Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col mb-5 mb-5 mb-xl-0">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">
+                <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png">
+              </h4>
+              <p>
+                Diterima magang di xendit setelah belajar membuat aplikasi web dengan python dan menggunakan git bersama metalit
+              </p>                                   
+              <hr>
+              <div class="row">
+                <div class="col-md-2">
+                  <img class="avatar-img rounded-circle" src="{% static 'fadel.jpeg' %}">
+                </div>
+                <div class="col-md-10 px-5 col-sm-0">
+                  <div class="profile">
+                    <h6 class="cust-name">Fadel Ananda</h6>
+                    <p class="cust-profession">Backend developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--our program-->
-  <section class="py-5 bg-light">
+  <section class="py-5">
     <div class="container px-5 my-5">
       <div class="text-center mb-5">
         <h1 class="fw-bolder">Program kami</h1>
@@ -130,81 +194,4 @@
         </div>
     </div>
   </section>
-
-  <!-- <div class="py-5">
-    <div class="container px-5 my-5">
-      <div class="text-center mb-5">
-        <h1 class="fw-bolder">Testimoni</h1>
-        <p class=" text-muted mb-0">Yang Mereka Katakan Tentang Kami</p>
-      </div>
-      <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-3 justify-content-center">
-        <div class="col mb-5 mb-5 mb-xl-0">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">
-                <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png">
-              </h4>
-              <p>Nam libero tempore, cum soluta nobis est eligendi optio, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>                                   
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
-                </div>
-                <div class="col-md-10 px-5 col-sm-0">
-                  <div class="profile">
-                    <h6 class="cust-name">Lisa Apriliani</h6>
-                    <p class="cust-profession">Quality Assurance</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-5 mb-5 mb-xl-0">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">
-                <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png">
-              </h4>
-              <p>Nam libero tempore, cum soluta nobis est eligendi optio, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>                                   
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
-                </div>
-                <div class="col-md-10 px-5 col-sm-0">
-                  <div class="profile">
-                    <h6 class="cust-name">Lisa Apriliani</h6>
-                    <p class="cust-profession">Quality Assurance</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-5 mb-5 mb-xl-0">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">
-                <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png">
-              </h4>
-              <p>Nam libero tempore, cum soluta nobis est eligendi optio, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>                                   
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
-                </div>
-                <div class="col-md-10 px-5 col-sm-0">
-                  <div class="profile">
-                    <h6 class="cust-name">Nanda Firmansyah</h6>
-                    <p class="cust-profession">Frontend developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 {% endblock %}
