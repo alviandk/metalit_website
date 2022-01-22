@@ -250,7 +250,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
