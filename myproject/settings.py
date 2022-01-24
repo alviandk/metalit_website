@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django_filters',
     'graphene_django',
     'rest_framework',
+    'storages',
 
     'blog_backend',
     'course',
@@ -180,20 +181,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'django_oss_storage.backends.OssStaticStorage'
-
-DEFAULT_FILE_STORAGE = 'django_oss_storage.backends.OssMediaStorage'
-
-OSS_ACCESS_KEY_ID = env('OSS_ACCESS_KEY_ID')
-
-# AliCloud access key secret
-OSS_ACCESS_KEY_SECRET = env('OSS_ACCESS_KEY_SECRET')
-
-OSS_BUCKET_NAME = env('OSS_BUCKET_NAME')
-
-# The URL of AliCloud OSS endpoint
-# Refer https://www.alibabacloud.com/help/zh/doc-detail/31837.htm for OSS Region & Endpoint
-OSS_ENDPOINT = env('OSS_ENDPOINT')
+USE_S3 = env.bool('USE_S3', False)
+if USE_S3:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+    AWS_S3_ACCESS_KEY_ID = env('AWS_S3_ACCESS_KEY_ID')
+    AWS_S3_SECRET_ACCESS_KEY = env('AWS_S3_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_DEFAULT_ACL = 'public-read'
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
