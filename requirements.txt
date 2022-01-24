@@ -17,7 +17,6 @@ django-cors-headers==3.8.0
 django-environ==0.4.5
 django-filter==2.4.0
 django-js-asset==1.2.2
-django-oss-storage==1.1.1
 django-sortedm2m==3.0.2
 django-sortedone2many==0.2.2
 django-storages==1.12.3
