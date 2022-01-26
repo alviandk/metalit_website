@@ -3,7 +3,7 @@ source /home/ubuntu/virtmetalit/bin/activate
 export $(cat .env | xargs) 
 if [ -d static ]
 then
-    excho "static dir exist"
+    echo "static dir exist"
 else
     mkdir static
 cd /home/ubuntu/metalit/static
