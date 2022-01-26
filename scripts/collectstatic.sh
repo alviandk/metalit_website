@@ -6,9 +6,12 @@ then
     echo "static dir exist"
 else
     mkdir static
+fi
 cd /home/ubuntu/metalit/static
 git fetch origin
 reslog=$(git log HEAD..origin/main --oneline)
-git pull origin main
-cd /home/ubuntu/metalit
-./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
+if [[ "${reslog}" != "" ]] ; then
+    git pull origin main
+    cd /home/ubuntu/metalit
+    ./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
+fi
