@@ -16,3 +16,4 @@ then
     ./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
 else
     echo "skip collect"
+cd /
