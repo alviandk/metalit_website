@@ -9,11 +9,6 @@ else
 cd /home/ubuntu/metalit/static
 git fetch origin
 reslog=$(git log HEAD..origin/main --oneline)
-if [ "${reslog}" != "" ]; then
-    git pull origin main
-    cd /home/ubuntu/metalit
-    ./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
-else
-    echo "skip collect"
-fi
-cd /
+git pull origin main
+cd /home/ubuntu/metalit
+./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
