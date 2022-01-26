@@ -10,7 +10,6 @@ cd /home/ubuntu/metalit/static
 git fetch origin
 reslog=$(git log HEAD..origin/main --oneline)
 if [ "${reslog}" != "" ]; then
-then
     git pull origin main
     cd /home/ubuntu/metalit
     ./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
