@@ -13,3 +13,4 @@ if [[ "${reslog}" != "" ]] ; then
     git pull origin main
     cd /home/ubuntu/metalit
     ./manage.py collectstatic --noinput -i admin -i ckeditor -i graphene_django -i rest_framework
+fi
