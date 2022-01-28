@@ -13,6 +13,9 @@ def dashboard(request):
 def about(request):
 	return render(request, 'revamp/about.html')
 
+def video_player(request):
+	return render(request, 'video-player.html')
+
 def contact(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
