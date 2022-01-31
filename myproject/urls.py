@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from revamp import views
-from .views import Home, Metalit
+from blog_backend import views as v
+#from .views import Home, Metalit
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path("dashboard", views.dashboard, name="dashboard"),
     path("about", views.about, name="about"),
     path("blog", views.blog, name="blog"),
+    path("blog-masonry", v.blog_masonry, name="blog_masonry"),
     path("contact", views.contact, name="contact"),
     path("course", views.course, name="course"),
     path("term-conditions", views.term_conditions, name="term-conditions"),
