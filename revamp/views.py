@@ -6,18 +6,21 @@ from .models import QA, PrivacyPolicy, TermCondition
 def home(request):
 	return render(request, 'revamp/home.html')
 
-def blog(request):
-	return render(request, 'revamp/blog.html')
-
 def dashboard(request):
-	# return render(request, 'revamp/dashboard.html')
+	#return render(request, 'revamp/dashboard.html')
 	return render(request, 'revamp/coming_soon.html')
 
 def about(request):
 	return render(request, 'revamp/about.html')
 
 def video_player(request):
-	return render(request, 'video-player.html')
+	return render(request, 'eduport/video-player.html')
+
+def coursee(request):
+	return render(request, 'eduport/course.html')
+
+def cart(request):
+	return render(request, 'eduport/cart.html')
 
 def contact(request):
 	if request.method == 'POST':
