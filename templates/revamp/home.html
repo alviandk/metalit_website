@@ -1,7 +1,8 @@
-{% extends "revamp/base.html" %}
+{% extends "eduport/main.html" %}
 {% load static %}
-{% block page_content %}
 
+{% block page_content %}
+  {% include 'eduport/header.html' %}
   <!-- Header-->
   <header class="py-5">
     <div class="container px-5">
@@ -155,7 +156,7 @@
       <div class="row mb-6 align-items-center justify-content-center">
         <div class="col-md-10">
           <div class="row align-items-center ">
-    <div class="col-xl-6 col-lg-7 col-md-12 col-12 order-1 text-center text-lg-start ">
+        <div class="col-xl-6 col-lg-7 col-md-12 col-12 order-1 text-center text-lg-start ">
               <!-- caption -->
               <span class="text-primary mb-3 d-block text-uppercase fw-semi-bold ls-xl">Mentor</span>
               <h3 class="fw-bold mb-3">
@@ -226,4 +227,5 @@
         </div>
     </div>
   </section> -->
+  {% include 'eduport/footer.html' %}
 {% endblock %}

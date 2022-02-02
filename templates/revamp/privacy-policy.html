@@ -1,22 +1,24 @@
-{% extends "revamp/base.html" %}
+{% extends "eduport/main.html" %}
 {% load static %}
 
 {% block title %} - Kebijakan_Privasi{% endblock %}
 
 {% block page_content %}
-<header class="py-5 px-2">
-  <div class="container px-5">
-    <div class="justify-content-center">
-      <h1 class="fw-bolder mb-5 text-center">Kebijakan dan Privasi</h1>
-      <div class="mb-5">
-        <p style="text-indent: 45px; text-align: justify;">
-                {% autoescape off %}
-                  {{ content }}
-                {% endautoescape %}
-        </p>
-        <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/privacy.png" %}'/>
+  {% include 'eduport/header.html' %}
+  <header class="py-5 px-2">
+    <div class="container px-5">
+      <div class="justify-content-center">
+        <h1 class="fw-bolder mb-5 text-center">Kebijakan dan Privasi</h1>
+        <div class="mb-5">
+          <p style="text-indent: 45px; text-align: justify;">
+                  {% autoescape off %}
+                    {{ content }}
+                  {% endautoescape %}
+          </p>
+          <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/privacy.png" %}'/>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+  {% include 'eduport/footer.html' %}
 {% endblock %}

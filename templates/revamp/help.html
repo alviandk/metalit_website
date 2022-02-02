@@ -1,44 +1,46 @@
-{% extends "revamp/base.html" %}
+{% extends "eduport/main.html" %}
 {% load static %}
 {% block title %} - Pusat Bantuan{% endblock %}
 
 {% block page_content %}
-<header class="py-5 px-2">
-  <div class="container px-5">
-    <div class="justify-content-center">
-      <h1 class="fw-bolder mb-5 text-center">Pusat bantuan</h1>
-      <div class="accordion accordion-flush" id="QA">
-        {% for item in qna %}
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA{{ item.id }}" aria-expanded="false" aria-controls="QA{{ item.id }}">{{ item.question }}</button>
-          </h2>
-          <div id="QA{{ item.id }}" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#QA">
-            <div class="accordion-body">
-              {% autoescape off %}
-                {{ item.answere }}
-              {% endautoescape %}
+  {% include 'eduport/header.html' %}
+  <header class="py-5 px-2">
+    <div class="container px-5">
+      <div class="justify-content-center">
+        <h1 class="fw-bolder mb-5 text-center">Pusat bantuan</h1>
+        <div class="accordion accordion-flush" id="QA">
+          {% for item in qna %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA{{ item.id }}" aria-expanded="false" aria-controls="QA{{ item.id }}">{{ item.question }}</button>
+            </h2>
+            <div id="QA{{ item.id }}" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#QA">
+              <div class="accordion-body">
+                {% autoescape off %}
+                  {{ item.answere }}
+                {% endautoescape %}
+              </div>
             </div>
           </div>
+          {% endfor %}
+
         </div>
-        {% endfor %}
-
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="py-5 px-2">
-  <div class="container px-5">
-    <div class="justify-content-center">
-      <h2 class="fw-bolder mb-4 text-center">Ingin bertanya lebih jauh?</h2>
-      <div class="mb-5 text-center">
-        <p>Hubungi kami untuk informasi lebih lanjut mengenai pelatihan di Metalit.id</p>        
+  <section class="py-5 px-2">
+    <div class="container px-5">
+      <div class="justify-content-center">
+        <h2 class="fw-bolder mb-4 text-center">Ingin bertanya lebih jauh?</h2>
+        <div class="mb-5 text-center">
+          <p>Hubungi kami untuk informasi lebih lanjut mengenai pelatihan di Metalit.id</p>        
+        </div>
+        <div class="text-center">
+          <a class="btn btn-primary" href="{% url 'contact' %}">Hubungi Kami</a>
+        </div>
       </div>
-      <div class="text-center">
-        <a class="btn btn-primary" href="{% url 'contact' %}">Hubungi Kami</a>
-      </div>
-    </div>
-</section>
+  </section>
+  {% include 'eduport/footer.html' %}
 
 {% endblock %}

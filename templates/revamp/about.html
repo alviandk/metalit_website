@@ -1,81 +1,82 @@
-{% extends "revamp/base.html" %}
+{% extends "eduport/main.html" %}
 {% load static %}
 
 {% block title %} - Tentang Kami{% endblock %}
 
 {% block page_content %}
-<!--Section about-->
-<header class="py-5">
-  <div class="container px-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="text-center my-5">
-          <h1 class="fw-bolder mb-3">Tentang Kami</h1>
-          <p class="text-muted mb-4">PT Metamorfosa Teknologi Berdikari (Metalit) merupakan talent platform yang menyediakan talent IT dengan skill standar industri masa kini. Kami melakukan hal ini dengan cara menghubungkan para pencari kerja dengan perusahaan-perusahaan pemberi kerja yang membutuhkan skill talent di bidang IT dengan pemberian pelatihan khusus baik hard skill maupun soft skill</p>
+  {% include 'eduport/header.html' %}
+  <!--Section about-->
+  <header class="py-5">
+    <div class="container px-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center my-5">
+            <h1 class="fw-bolder mb-3">Tentang Kami</h1>
+            <p class="text-muted mb-4">PT Metamorfosa Teknologi Berdikari (Metalit) merupakan talent platform yang menyediakan talent IT dengan skill standar industri masa kini. Kami melakukan hal ini dengan cara menghubungkan para pencari kerja dengan perusahaan-perusahaan pemberi kerja yang membutuhkan skill talent di bidang IT dengan pemberian pelatihan khusus baik hard skill maupun soft skill</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!--Section1 Visi-->
-<section class="py-5 bg-light">
-  <div class="container px-5 my-5">
-    <div class="row gx-5 align-items-center text-center">
-      <div class="col-lg-8">
-        <h2 class="fw-bolder mb-3">Visi Kami</h2>
-        <p class="text-muted mb-4">Menghasilkan talent IT yang siap kerja dengan skill yang mengikuti standar industri dan menggunakan teknologi masa kini.</p>
-      </div>
-      <div class="col-lg-4">
-        <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/about_1.svg" %}'/>
+  <!--Section1 Visi-->
+  <section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center text-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bolder mb-3">Visi Kami</h2>
+          <p class="text-muted mb-4">Menghasilkan talent IT yang siap kerja dengan skill yang mengikuti standar industri dan menggunakan teknologi masa kini.</p>
+        </div>
+        <div class="col-lg-4">
+          <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/about_1.svg" %}'/>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!--Section1 Misi-->
-<section class="py-5">
-  <div class="container px-5 my-5">
-    <div class="row gx-5 align-items-center">
-      <div class="col-lg-4">
-        <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/about_2.svg" %}'/>
-      </div>
-      <div class="col-lg-8">
-          <h2 class="fw-bolder mb-4 text-center">Misi Kami</h2>
-          <div class="row gx-5 row-cols-1 row-cols-md-2">
-            <div class="col mb-5 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src='{% static "images/works1.png" %}'>
+  <!--Section1 Misi-->
+  <section class="py-5">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-4">
+          <img class="img-fluid rounded mb-5 mb-lg-0" src='{% static "images/about_2.svg" %}'/>
+        </div>
+        <div class="col-lg-8">
+            <h2 class="fw-bolder mb-4 text-center">Misi Kami</h2>
+            <div class="row gx-5 row-cols-1 row-cols-md-2">
+              <div class="col mb-5 h-100">
+                <div class="feature mb-2">
+                  <img class='img95' src='{% static "images/works1.png" %}'>
+                </div>
+                <h2 class="h5">Pelatihan</h2>
+                <p class="mb-0">Memberikan pelatihan menggunakan metode dan teknologi sesuai dengan standar industri masa kini.</p>
               </div>
-              <h2 class="h5">Pelatihan</h2>
-              <p class="mb-0">Memberikan pelatihan menggunakan metode dan teknologi sesuai dengan standar industri masa kini.</p>
-            </div>
-            <div class="col mb-5 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src='{% static "images/works2.png" %}'>
+              <div class="col mb-5 h-100">
+                <div class="feature mb-2">
+                  <img class='img95' src='{% static "images/works2.png" %}'>
+                </div>
+                <h2 class="h5">Kerjasama dengan perusahaan</h2>
+                <p class="mb-0">Menjalin kerja sama dengan perusahaann untuk menyalurkan para pencari kerja</p>
               </div>
-              <h2 class="h5">Kerjasama dengan perusahaan</h2>
-              <p class="mb-0">Menjalin kerja sama dengan perusahaann untuk menyalurkan para pencari kerja</p>
-            </div>
-            <div class="col mb-5 mb-md-0 h-100">
-              <div class="feature mb-2">
-                <img class='img95' src='{% static "images/works3.png" %}'>
+              <div class="col mb-5 mb-md-0 h-100">
+                <div class="feature mb-2">
+                  <img class='img95' src='{% static "images/works3.png" %}'>
+                </div>
+                <h2 class="h5">Mengikuti Perkembangan</h2>
+                <p class="mb-0">Metalit berusaha untuk selalu up to date dengan perkambangan teknologi dalam industri IT</p>
               </div>
-              <h2 class="h5">Mengikuti Perkembangan</h2>
-              <p class="mb-0">Metalit berusaha untuk selalu up to date dengan perkambangan teknologi dalam industri IT</p>
-            </div>
-            <div class="col h-100">
-              <div class="feature mb-2">
-                <img class='img95' src='{% static "images/works4.png" %}'>
+              <div class="col h-100">
+                <div class="feature mb-2">
+                  <img class='img95' src='{% static "images/works4.png" %}'>
+                </div>
+                <h2 class="h5">Pengembangan Platform</h2>
+                <p class="mb-0">Platform Metalit akan selalu berkembang sesuai dengan kebutuhan pengguna</p>
               </div>
-              <h2 class="h5">Pengembangan Platform</h2>
-              <p class="mb-0">Platform Metalit akan selalu berkembang sesuai dengan kebutuhan pengguna</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+  {% include 'eduport/footer.html' %}
 {% endblock %}
