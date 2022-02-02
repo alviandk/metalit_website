@@ -3,6 +3,8 @@
 {% block title %} - Blog{% endblock %}
 
 {% block page_content %}
+	{% include 'eduport/header.html' %}
+	<main>
 		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
 			<!-- Main banner background image -->
 			<div class="container">
@@ -555,6 +557,6 @@
 				</div>
 			</div>
 		</section>
-		<!-- =======================
-		Action box END -->
+	</main>
+	{% include 'eduport/footer.html' %}
 {% endblock %}
