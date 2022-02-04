@@ -7,17 +7,14 @@ def home(request):
 	return render(request, 'revamp/home.html')
 
 def dashboard(request):
-	#return render(request, 'revamp/dashboard.html')
-	return render(request, 'revamp/coming_soon.html')
+	return render(request, 'eduport/dashboard.html')
+	#return render(request, 'revamp/coming_soon.html')
 
 def about(request):
 	return render(request, 'revamp/about.html')
 
 def video_player(request):
 	return render(request, 'eduport/video-player.html')
-
-def coursee(request):
-	return render(request, 'eduport/course.html')
 
 def cart(request):
 	return render(request, 'eduport/cart.html')
@@ -47,7 +44,8 @@ def course(request):
 	# form = PelatihantForm()
 	# context = {'form': form}
 	# return render(request, 'revamp/course.html', context)
-	return render(request, 'revamp/coming_soon.html')
+	#return render(request, 'revamp/coming_soon.html')
+	return render(request, 'eduport/course.html')
 
 def term_conditions(request):
 	context = {}

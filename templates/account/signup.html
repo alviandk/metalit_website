@@ -1,4 +1,4 @@
-{% extends "revamp/base.html" %}
+{% extends "eduport/main.html" %}
 {% load i18n %}
 {% load account %}
 {% load socialaccount %}
@@ -8,6 +8,7 @@
 {% block title %} - Signup{% endblock %}
 
 {% block page_content %}
+  {% include 'eduport/header.html' %}
 <section class="py-5">
   <div class="container px-5">
     <div class="row justify-content-center">
@@ -103,4 +104,5 @@
     </div>
   </div>
 </section>
+{% include 'eduport/footer.html' %}
 {% endblock %}

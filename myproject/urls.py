@@ -29,7 +29,6 @@ urlpatterns = [
     path("video-player", views.video_player, name="video_player"),
     path("dashboard", views.dashboard, name="dashboard"),
     path("about", views.about, name="about"),
-    path("coursee", views.coursee, name="coursee"),
     path("cart", views.cart, name="cart"),
     path("blog-masonry", v.blog_masonry, name="blog_masonry"),
     path("contact", views.contact, name="contact"),
