@@ -19,6 +19,15 @@ def video_player(request):
 def cart(request):
 	return render(request, 'eduport/cart.html')
 
+def error(request):
+	return render(request, 'eduport/error-404.html')
+
+def edit_profile(request):
+	return render(request, 'eduport/edit-profile.html')
+
+def empty_cart(request):
+	return render(request, 'eduport/empty-cart.html')
+
 def contact(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
