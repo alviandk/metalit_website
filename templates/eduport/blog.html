@@ -58,18 +58,21 @@
 							<div class="bg-overlay bg-dark opacity-4"></div>
 							<div class="card-img-overlay d-flex align-items-start p-3">
 								<!-- badge -->
-								<a href="#" class="badge bg-danger text-white">{{article.slug}}</a>
+								<a href="#" class="badge bg-danger text-white text-decoration-none">{{article.Category.name}}</a>
 							</div>
 						</div>
 
 						<!-- Card body -->
 						<div class="card-body px-3">
 							<!-- Title -->
-							<h5 class="card-title"><a href="#">{{article.title}}</a></h5>
+							<h5 class="card-title">
+								<a class="text-decoration-none" href="#">{{article.title}}</a>
+							</h5>
 							<p class="text-truncate-2">{{article.description}}</p>
 							<!-- Info -->
 							<div class="d-flex justify-content-between">
-								<h6 class="mb-0"><a href="#">{{article.author.name}}</a></h6>
+								<h6 class="mb-0">
+									<a class="text-decoration-none" href="#">{{article.author.name}}</a></h6>
 								<span class="small">{{article.published_at}}</span>
 							</div>
 						</div>
@@ -81,15 +84,19 @@
 				<!-- Card item START -->
 				<div class="col-sm-6 col-lg-4 grid-item">
 					<div class="card bg-light p-3">
-						<div class="card-body">
+						<div>
 							<!-- Badge -->
-							<a href="#" class="badge bg-success text-white mb-2">{{article.slug}}</a>
+							<a href="#" class="badge bg-success text-white mb-2 text-decoration-none">{{article.Category.name}}</a>
 							<!-- Title -->
-							<h5 class="card-title"><a href="#">{{article.title}}</a></h5>
+							<h5 class="card-title">
+								<a class="text-decoration-none" href="#">{{article.title}}</a>
+							</h5>
 							<p>{{article.description}} </p>
 							<!-- Info -->
 							<div class="d-flex justify-content-between">
-								<h6 class="mb-0"><a href="#">{{article.author.name}}</a></h6>
+								<h6 class="mb-0">
+									<a class="text-decoration-none" href="#">{{article.author.name}}</a>
+								</h6>
 								<span class="small">{{article.published_at}}</span>
 							</div>
 						</div>
