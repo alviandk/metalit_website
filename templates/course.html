@@ -1,0 +1,167 @@
+{% load static %}
+{% load navigation %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Transformasikan dirimu jadi lebih baik"/>
+
+        <title> Metalit | Transfromasikan Dirimu Jadi Lebih Baik</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+        {% include 'eduport/header.html' %}
+        <div class="d-flex height" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">
+                    Digital Marketing
+                </div>
+                <div class="list-group list-group-flush overflow-auto vh-80">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTree">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTree" aria-expanded="true" aria-controls="panelsStayOpen-collapseTree">
+                            Introduction of Digital Marketing
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTree">
+                          <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">Introduction
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    What is Digital Marketing What is Digital Marketing
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label class="form-check-label text-muted" for="flexCheckChecked">Type of Digital Marketing
+                                    </label>
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            What is Search Engine Optimization (SEO)
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Introduction
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    How to SEO Optimise Your Homepage
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Internal and External Links
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label class="form-check-label text-muted" for="flexCheckChecked">SEO Keyword Planning</label>
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label class="form-check-label text-muted" for="flexCheckChecked">Measuring SEO Effectiveness</label>
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div>
+                        <div class="ms-4 d-flex justify-content-between align-items-center me-3">
+                            <span class="mb-0 fw-bold text-muted">Integration with Website</span>
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </div>
+                        <hr>
+                       </div>
+                       <div>
+                        <div class="ms-4 d-flex justify-content-between align-items-center me-3">
+                            <span class="mb-0 fw-bold text-muted">YouTube Marketing</span>
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </div>
+                        <hr>
+                       </div>
+                   </div>
+               </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    
+                        <i class="fa-solid fa-bars ms-3" id="sidebarToggle"></i>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn">
+                                <a href="/" role="button" 
+                                    class="text-reset text-decoration-none">
+                                    <span class="btn-label">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </span> Previous
+                                </a>
+                            </button>
+                            <button type="button" class="btn me-3">
+                                <a href="" role="button" 
+                                    class="text-reset text-decoration-none">
+                                    Next 
+                                    <span class="btn-label">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </button>
+                        </div>
+                    
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">Simple Sidebar</h1>
+                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% include 'eduport/footer.html' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'scripts.js' %}"></script>
+
+    </body>
+</html>
+

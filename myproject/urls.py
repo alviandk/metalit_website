@@ -26,6 +26,7 @@ urlpatterns = [
     #path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
     path("", views.home, name="home"),
+    path("coba", views.coba, name="coba"),
     path("video-player", views.video_player, name="video_player"),
     path("empty-cart", views.empty_cart, name="empty_cart"),
     path("edit-profile", views.edit_profile, name="edit_profile"),
