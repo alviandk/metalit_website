@@ -9,6 +9,9 @@ def home(request):
 def coba(request):
 	return render(request, 'course.html')
 
+def slider(request):
+	return render(request, 'eduport/slider.html')
+
 def dashboard(request):
 	return render(request, 'eduport/dashboard.html')
 	#return render(request, 'revamp/coming_soon.html')

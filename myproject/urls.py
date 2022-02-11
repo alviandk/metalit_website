@@ -32,6 +32,7 @@ urlpatterns = [
     path("edit-profile", views.edit_profile, name="edit_profile"),
     path("error", views.error, name="error"),
     path("dashboard", views.dashboard, name="dashboard"),
+    path("slider", views.slider, name="slider"),
     path("about", views.about, name="about"),
     path("cart", views.cart, name="cart"),
     path("blog-masonry", v.blog_masonry, name="blog"),
