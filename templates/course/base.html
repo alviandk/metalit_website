@@ -62,7 +62,7 @@
 		
 		<!-- Template Functions -->
 		<script src="{% static 'edu/assets/js/functions.js' %}"></script>
-		
+
 	    <!-- HTMX CDN -->
 	    <script src="https://unpkg.com/htmx.org@1.1.0"></script> 
 	        <!-- CSRF request in the headers -->
@@ -71,5 +71,6 @@
 	        e.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
 	        })
 	    </script>
+
 	</body>
 </html>

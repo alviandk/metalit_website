@@ -1,11 +1,17 @@
-{% extends "eduport/base.html" %}
+f{% extends "course/base.html" %}
 {% load static %}
 {% block title %} - Blog{% endblock %}
 
 {% block page_content %}
-	{% include 'eduport/header.html' %}
-	<main>
-		<section class="py-5">
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main id="tasks"
+		hx-confirm="Are you sure you want to delete this task?"
+		hx-target="#tasks"
+		hx-swap="outerHTML">
+		  
+		<!-- =======================
+		Page Banner START -->
+		<section class="py-0" >
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -15,8 +21,8 @@
 							<div class="d-flex justify-content-center">
 								<nav aria-label="breadcrumb">
 									<ol class="breadcrumb breadcrumb-dots mb-0">
-										<li class="breadcrumb-item"><a href="#">Home</a></li>
-										<li class="breadcrumb-item"><a href="#">Courses</a></li>
+										<li class="breadcrumb-item"><a href="{% url 'course' %}">Home</a></li>
+										<li class="breadcrumb-item"><a href="{% url 'course' %}">Courses</a></li>
 										<li class="breadcrumb-item active" aria-current="page">Cart</li>
 									</ol>
 								</nav>
@@ -26,7 +32,11 @@
 				</div>
 			</div>
 		</section>
+		<!-- =======================
+		Page Banner END -->
 
+		<!-- =======================
+		Page content START -->
 		<section class="pt-5">
 			<div class="container">
 			
@@ -43,12 +53,15 @@
 								<button type="button" class="btn btn-link mb-0 text-end" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x-lg text-dark"></i></button>
 							</div>
 
-							<div class="table-responsive border-0 rounded-3">
+
+
+							<div>
 								<!-- Table START -->
 								<table class="table align-middle p-4 mb-0">
 									<!-- Table head -->
 									<!-- Table body START -->
 									<tbody class="border-top-0">
+										{% for i in order %}
 										<!-- Table item -->
 										<tr>
 											<!-- Course item -->
@@ -56,50 +69,27 @@
 												<div class="d-lg-flex align-items-center">
 													<!-- Image -->
 													<div class="w-100px w-md-80px mb-2 mb-md-0">
-														<img src="{% static 'edu/assets/images/courses/4by3/08.jpg' %}" class="rounded" alt="">
+														<img src="{{ i.course.cover_image }}" class="rounded" alt="">
 													</div>
 													<!-- Title -->
 													<h6 class="mb-0 ms-lg-3 mt-2 mt-lg-0">	
-														<a href="#">Building Scalable APIs with GraphQL</a>
+														<a href="{% url 'detail' i.course.slug%}">{{i.course.course_name}}</a>
 													</h6>
 												</div>
 											</td>
 											<!-- Amount item -->
 											<td>
-												<h5 class="text-success mb-0">$350</h5>
+												<h5 class="text-success mb-0">{{i.course.price}}</h5>
 											</td>
 											<!-- Action item -->
 											<td>
 												<a href="#" class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
-												<button class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="fas fa-fw fa-times"></i></button>
+												<a hx-delete="{% url 'delete' i.id %}" class="btn btn-sm btn-danger-soft px-2 mb-0">
+													<i class="fas fa-fw fa-times"></i>
+												<a>			
 											</td>
 										</tr>
-
-										<!-- Table item -->
-										<tr>
-											<!-- Course item -->
-											<td>
-												<div class="d-lg-flex align-items-center">
-													<!-- Image -->
-													<div class="w-100px w-md-80px mb-2 mb-md-0">
-														<img src="{% static 'edu/assets/images/courses/4by3/10.jpg' %}" class="rounded" alt="">
-													</div>
-													<!-- Title -->
-													<h6 class="mb-0 ms-lg-3 mt-2 mt-lg-0">	
-														<a href="#">Bootstrap 5 From Scratch</a>
-													</h6>
-												</div>
-											</td>
-											<!-- Amount item -->
-											<td>
-												<h5 class="text-success mb-0">$150</h5>
-											</td>
-											<!-- Action item -->
-											<td>
-												<a href="#" class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
-												<button class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="fas fa-fw fa-times"></i></button>
-											</td>
-										</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
@@ -146,19 +136,23 @@
 
 							<!-- Button -->
 							<div class="d-grid">
-								<a href="checkout.html" class="btn btn-lg btn-success">Proceed to Checkout</a>
+								<a href="{% url 'checkout' %}" class="btn btn-lg btn-success">Proceed to Checkout</a>
 							</div>
 
 							<!-- Content -->
 							<p class="small mb-0 mt-2 text-center">By completing your purchase, you agree to these <a href="#"><strong>Terms of Service</strong></a></p>
 
 						</div>
+						<!-- Card total END -->
 					</div>
+					<!-- Right sidebar END -->
 
-				</div>
+				</div><!-- Row END -->
 			</div>
 		</section>
-	</main>
-	{% include 'eduport/footer.html' %}
+		<!-- =======================
+		Page content END -->
 
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
 {% endblock %}

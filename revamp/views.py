@@ -6,33 +6,8 @@ from .models import QA, PrivacyPolicy, TermCondition
 def home(request):
 	return render(request, 'revamp/home.html')
 
-def coba(request):
-	return render(request, 'course.html')
-
-def slider(request):
-	return render(request, 'eduport/slider.html')
-
-def dashboard(request):
-	return render(request, 'eduport/dashboard.html')
-	#return render(request, 'revamp/coming_soon.html')
-
 def about(request):
 	return render(request, 'revamp/about.html')
-
-def video_player(request):
-	return render(request, 'eduport/video-player.html')
-
-def cart(request):
-	return render(request, 'eduport/cart.html')
-
-def error(request):
-	return render(request, 'eduport/error-404.html')
-
-def edit_profile(request):
-	return render(request, 'eduport/edit-profile.html')
-
-def empty_cart(request):
-	return render(request, 'eduport/empty-cart.html')
 
 def contact(request):
 	if request.method == 'POST':
@@ -46,21 +21,6 @@ def contact(request):
 	form = ContactForm()
 	context = {'form': form}
 	return render(request, 'revamp/contact.html', context)
-
-def course(request):
-	# if request.method == 'POST':
-	# 	form = PelatihantForm(request.POST)
-	# 	if form.is_valid():
-	# 		form.save()
-	# 		messages.success(request, 'Pengisian formulir berhasil disimpan')
-	# 		return render(request, 'revamp/course.html')
-	# 	else:
-	# 		messages.error(request, 'pesan tidak berhasil terkirim')
-	# form = PelatihantForm()
-	# context = {'form': form}
-	# return render(request, 'revamp/course.html', context)
-	#return render(request, 'revamp/coming_soon.html')
-	return render(request, 'eduport/course.html')
 
 def term_conditions(request):
 	context = {}
@@ -82,3 +42,34 @@ def help(request):
 	qa = QA.objects.all()
 	context = {"qna": qa}
 	return render(request, 'revamp/help.html', context)
+
+"""def course(request):
+	# if request.method == 'POST':
+	# 	form = PelatihantForm(request.POST)
+	# 	if form.is_valid():
+	# 		form.save()
+	# 		messages.success(request, 'Pengisian formulir berhasil disimpan')
+	# 		return render(request, 'revamp/course.html')
+	# 	else:
+	# 		messages.error(request, 'pesan tidak berhasil terkirim')
+	# form = PelatihantForm()
+	# context = {'form': form}
+	# return render(request, 'revamp/course.html', context)
+	#return render(request, 'revamp/coming_soon.html')
+	return render(request, 'eduport/course.html')"""
+
+def dashboard(request):
+	return render(request, 'eduport/dashboard.html')
+	#return render(request, 'revamp/coming_soon.html')
+
+def video_player(request):
+	return render(request, 'eduport/video-player.html')
+
+def error(request):
+	return render(request, 'eduport/error-404.html')
+
+def slider(request):
+	return render(request, 'eduport/slider.html')
+
+def edit_profile(request):
+	return render(request, 'eduport/edit-profile.html')

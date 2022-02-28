@@ -15,35 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from revamp import views
-from blog_backend import views as v
 #from .views import Home, Metalit
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path("", Home.as_view(), name="home"),
     #path("metalit/", Metalit.as_view(), name="metalit"),
     path('admin/', admin.site.urls),
-    path("", views.home, name="home"),
-    path("coba", views.coba, name="coba"),
-    path("video-player", views.video_player, name="video_player"),
-    path("empty-cart", views.empty_cart, name="empty_cart"),
-    path("edit-profile", views.edit_profile, name="edit_profile"),
-    path("error", views.error, name="error"),
-    path("dashboard", views.dashboard, name="dashboard"),
-    path("slider", views.slider, name="slider"),
-    path("about", views.about, name="about"),
-    path("cart", views.cart, name="cart"),
-    path("blog-masonry", v.blog_masonry, name="blog"),
-    path("contact", views.contact, name="contact"),
-    path("course", views.course, name="course"),
-    path("term-conditions", views.term_conditions, name="term-conditions"),
-    path("privacy-policy", views.privacy_policy, name="privacy-policy"),
-    path("help", views.help, name="help"),
     path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
+    path('', include('blog_backend.urls')),
+    path('', include('revamp.urls')),
+    path('', include('course.urls')),
     path('api/', include('upload_cv.urls')),
     path("accounts/", include("allauth.urls")),
-    path('api/', include('course.urls')),
     
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

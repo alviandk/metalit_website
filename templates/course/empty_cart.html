@@ -1,10 +1,12 @@
-{% extends "eduport/base.html" %}
+{% extends "course/base.html" %}
 {% load static %}
 {% block title %} - Blog{% endblock %}
 
 {% block page_content %}
-	{% include 'eduport/header.html' %}
+	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
+		<!-- =======================
+		Page Banner START -->
 		<section class="py-0">
 			<div class="container">
 				<div class="row">
@@ -26,7 +28,11 @@
 				</div>
 			</div>
 		</section>
+		<!-- =======================
+		Page Banner END -->
 
+		<!-- =======================
+		Page content START -->
 		<section>
 			<div class="container">
 				<div class="row">
@@ -38,12 +44,14 @@
 						<!-- info -->
 						<p class="mb-0">Please check out all the available courses and buy some courses that fulfill your needs.</p>
 						<!-- Button -->
-						<a href="index.html" class="btn btn-primary mt-4 mb-0">Back to Shop</a>
+						<a href="{% url 'course' %}" class="btn btn-primary mt-4 mb-0">Back to Shop</a>
 					</div>
 				</div>
 			</div>
 		</section>
-	</main>
-	{% include 'eduport/footer.html' %}
+		<!-- =======================
+		Page content END -->
 
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
 {% endblock %}

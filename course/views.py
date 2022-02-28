@@ -3,8 +3,8 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CourseSerializer
-from .models import Course
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, get_object_or_404
+from .models import Course, Order
 
 class CourseView(APIView):
 	def post(self, request, *args, **kwargs):
@@ -32,3 +32,33 @@ class CourseView(APIView):
 		item = get_object_or_404(Course, slug=slug)
 		item.delete()
 		return Response({"status": "Berhasil", "data": "Item telah dihapus"})
+
+def course(request):
+	course = Course.objects.all()
+	return render(request, 'course/course.html', {'course': course})
+
+def detail(request, slug):
+	#course = get_object_or_404(Course, slug=slug)
+	course = Course.objects.filter(slug=slug)
+	return render(request, 'course/detail.html', {'course': course})
+
+def add_to_cart(request, cart_id):
+    course = Course.objects.get(id=cart_id)
+    order = Order.objects.get_or_create(course=course)
+    return render(request, 'course/course-added.html')
+
+def cart(request):
+	if not Order.objects.all().exists():
+		return render(request, 'course/empty_cart.html')
+	else:
+		order = Order.objects.all()	
+		return render(request, 'course/cart.html', {'order': order})
+
+def delete(request, cart_id):
+    Order.objects.get(id=cart_id).delete()
+    order = Order.objects.all()
+    return cart(request)
+
+def checkout(request):
+	order = Order.objects.all()	
+	return render(request, 'course/checkout.html', {'order': order})
