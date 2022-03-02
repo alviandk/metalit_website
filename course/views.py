@@ -45,7 +45,7 @@ def detail(request, slug):
 def add_to_cart(request, cart_id):
     course = Course.objects.get(id=cart_id)
     order = Order.objects.get_or_create(course=course)
-    return render(request, 'course/course-added.html')
+    return cart(request)
 
 def cart(request):
 	if not Order.objects.all().exists():

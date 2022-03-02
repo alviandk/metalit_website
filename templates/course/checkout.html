@@ -1,6 +1,6 @@
 {% extends "course/base.html" %}
 {% load static %}
-{% block title %} - Blog{% endblock %}
+{% block title %} - Checkout{% endblock %}
 
 {% block page_content %}
 	<!-- **************** MAIN CONTENT START **************** -->
@@ -115,7 +115,7 @@
 								</div>
 								<!-- Cards -->
 								<div class="col-12">
-									<label class="form-label">Your saved cards *</label>
+									<label class="form-label">Your saved cards</label>
 									<div class="row g-2">
 										<div class="col-2 col-sm-1 border rounded me-2">
 											<a href="#"><img src="{% static 'edu/assets/images/client/mastercard.svg' %}" alt=""></a>
@@ -253,7 +253,9 @@
 									<div class="row g-3">
 										<!-- Image -->
 										<div class="col-sm-4">
-											<img class="rounded" src="{{ i.course.cover_image }}" alt="">
+											{% if i.course.cover_image %}
+											<img class="rounded" src="{{ i.course.cover_image.url }}" alt="">
+											{% endif %}
 										</div>
 										<!-- Info -->
 										<div class="col-sm-8">

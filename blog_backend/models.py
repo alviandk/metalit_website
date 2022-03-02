@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class Writer(models.Model):
 	name = models.CharField(max_length=255)
-	picture = models.ImageField(null=True, blank=True, upload_to="img/picture")
+	picture = models.ImageField(null=True, blank=True, upload_to="img/blog")
 	email = models.EmailField()
 	last_update = models.DateTimeField(auto_now=True)
 	article = models.ManyToManyField('Article', blank=True)

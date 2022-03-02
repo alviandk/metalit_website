@@ -6,7 +6,7 @@ class Course(models.Model):
 	id = models.AutoField(primary_key=True)
 	course_name = models.CharField(max_length=256)
 	description = models.TextField()
-	cover_image = models.ImageField(null=True, blank=True)
+	cover_image = models.ImageField(null=True, blank=True, upload_to="img/course")
 	price = models.CharField(max_length=5, null=True)
 	slug = models.SlugField()
 	trailer = models.URLField(max_length=200)
