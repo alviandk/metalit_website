@@ -45,11 +45,9 @@ jobs:
           DATABASE_PASSWORD:metalit-website/django_settings
           DATABASE_HOST:metalit-website/django_settings
           
-    - id: env
-      run: 'echo ${{ steps.secrets.outputs.BLOG_URL }} >> .env'
-      
-    - id: catblog
-      run: 'cat .env'
+    - name: Write the secrets content
+      run: |
+        echo "${{ steps.secrets.outputs.BLOG_URL }}"
           
     - id: generate_dotenv_file
       env:
