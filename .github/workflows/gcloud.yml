@@ -46,9 +46,9 @@ jobs:
 #           DATABASE_HOST:metalit-website/django_settings
           
     - name: Write SECRET_KEY
-      run: |
-        echo ${{ steps.secrets.outputs.SECRET_KEY }} > some.txt
-        cat some.txt
+      run: echo ${{ steps.secrets.outputs.SECRET_KEY }} > some.txt
+    - name: cat SECRET_KEY
+      run: cat some.txt
           
 #     - id: generate_dotenv_file
 #       env:
