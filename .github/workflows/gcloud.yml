@@ -39,6 +39,9 @@ jobs:
       
     - id: prepare-app-yaml
       uses: mshick/fast-envsubst@v1
+      env:
+        APPENGINE_URL: https://metalit-website.uc.r.appspot.com
+        GOOGLE_CLOUD_PROJECT: metalit-website
       with:
         env-file: .env
         in-file: template-app.yaml
