@@ -45,11 +45,9 @@ jobs:
 #           DATABASE_PASSWORD:metalit-website/django_settings
 #           DATABASE_HOST:metalit-website/django_settings
           
-    - name: Write SECRET_KEY
-      run: echo ${{ secrets.SECRET_KEY }} > some.txt
     - name: Write BLOG_URL
-      run: echo ${{ secrets.BLOG_URL }} >> some.txt
-    - name: cat SECRET_KEY
+      run: echo ${{ secrets.BLOG_URL }} > some.txt
+    - name: cat BLOG_URL
       run: cat some.txt
           
 #     - id: generate_dotenv_file
