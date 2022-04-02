@@ -28,11 +28,11 @@ jobs:
         workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         
-#     - id: 'secrets-managers'
-#       uses: 'google-github-actions/get-secretmanager-secrets@v0'
-#       with:
-#         secrets: |-
-#           SECRET_KEY:metalit-website/django_settings
+    - id: 'secrets'
+      uses: 'google-github-actions/get-secretmanager-secrets@v0'
+      with:
+        secrets: |-
+          SECRET_KEY:metalit-website/django_settings
 #           BLOG_URL:metalit-website/django_settings
 #           DJANGO_DEBUG:metalit-website/django_settings
 #           AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
