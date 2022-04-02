@@ -13,11 +13,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  job_id:
+  deployment:
     permissions:
       contents: 'read'
       id-token: 'write'
 
+    runs-on: 'ubuntu-latest'
     steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
