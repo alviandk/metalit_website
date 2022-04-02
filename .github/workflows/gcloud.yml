@@ -28,27 +28,27 @@ jobs:
         workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         
-    - id: 'secrets'
-      uses: 'google-github-actions/get-secretmanager-secrets@v0'
-      with:
-        secrets: |-
-          SECRET_KEY:metalit-website/django_settings
-          BLOG_URL:metalit-website/django_settings
-          DJANGO_DEBUG:metalit-website/django_settings
-          AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
-          AWS_S3_ACCESS_KEY_ID:metalit-website/django_settings
-          AWS_STORAGE_BUCKET_NAME:metalit-website/django_settings
-          USE_S3:metalit-website/django_settings
-          DJANGO_DB_ENGINE:metalit-website/django_settings
-          DATABASE_NAME:metalit-website/django_settings
-          DATABASE_USER:metalit-website/django_settings
-          DATABASE_PASSWORD:metalit-website/django_settings
-          DATABASE_HOST:metalit-website/django_settings
+#     - id: 'secrets-managers'
+#       uses: 'google-github-actions/get-secretmanager-secrets@v0'
+#       with:
+#         secrets: |-
+#           SECRET_KEY:metalit-website/django_settings
+#           BLOG_URL:metalit-website/django_settings
+#           DJANGO_DEBUG:metalit-website/django_settings
+#           AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
+#           AWS_S3_ACCESS_KEY_ID:metalit-website/django_settings
+#           AWS_STORAGE_BUCKET_NAME:metalit-website/django_settings
+#           USE_S3:metalit-website/django_settings
+#           DJANGO_DB_ENGINE:metalit-website/django_settings
+#           DATABASE_NAME:metalit-website/django_settings
+#           DATABASE_USER:metalit-website/django_settings
+#           DATABASE_PASSWORD:metalit-website/django_settings
+#           DATABASE_HOST:metalit-website/django_settings
           
     - name: Write SECRET_KEY
       run: |
           SECRET_KEY=${{ secrets.SECRET_KEY }} envsubst < template-app.yaml  > app.yaml
-          BLOG_URL=${{ steps.secrets.outputs.BLOG_URL }} envsubst < template-app.yaml  > app.yaml
+          BLOG_URL=${{ secrets.BLOG_URL }} envsubst < template-app.yaml  > app.yaml
           cat app.yaml
           
 #     - id: generate_dotenv_file
