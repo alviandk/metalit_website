@@ -25,20 +25,21 @@ env = environ.Env(
 )
 # reading .env file
 # environ.Env.read_env()
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-env_file = os.path.join(BASE_DIR, ".env")
 
-if os.path.isfile(env_file):
-    # Use a local secret file, if provided
-    env.read_env(env_file)
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# env_file = os.path.join(BASE_DIR, ".env")
 
-# project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+# if os.path.isfile(env_file):
+#     # Use a local secret file, if provided
+#     env.read_env(env_file)
 
-# client = secretmanager.SecretManagerServiceClient()
-# settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
-# name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
-# payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
-# env.read_env(io.StringIO(payload))
+project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+
+client = secretmanager.SecretManagerServiceClient()
+settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
+name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
+payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+env.read_env(io.StringIO(payload))
 
 APPENGINE_URL = env("APPENGINE_URL", default=None)
 if APPENGINE_URL:
