@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ main, gcp-secret-manager-ci ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -46,13 +46,19 @@ jobs:
         env-file: .env
         in-file: template-app.yaml
         out-file: app.yaml
+    
+    - id: 'see-yaml'
+      run: 'cat app.yaml'
+      
+    - id: 'see-env'
+      run: 'cat .env'
 
-    - id: 'deploy'
-      uses: 'google-github-actions/deploy-appengine@v0'
-      with:
-        deliverables: 'app.yaml'
+#     - id: 'deploy'
+#       uses: 'google-github-actions/deploy-appengine@v0'
+#       with:
+#         deliverables: 'app.yaml'
 
-    # Example of using the output
-    - id: 'test'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'
+#     # Example of using the output
+#     - id: 'test'
+#       run: 'curl "${{ steps.deploy.outputs.url }}"'
 
