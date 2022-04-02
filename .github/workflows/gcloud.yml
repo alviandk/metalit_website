@@ -48,7 +48,7 @@ jobs:
     - name: Write SECRET_KEY
       run: |
           SECRET_KEY=${{ secrets.SECRET_KEY }} envsubst < template-app.yaml  > app.yaml
-          BLOG_URL=${{ secrets.BLOG_URL }} envsubst < template-app.yaml  > app.yaml
+          BLOG_URL=${{ secrets.BLOG_URL }} envsubst < template-app.yaml  >> app.yaml
           cat app.yaml
           
 #     - id: generate_dotenv_file
