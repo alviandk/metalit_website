@@ -19,12 +19,8 @@
 runtime: python39
 
 env_variables:
-  # This setting is used in settings.py to configure your ALLOWED_HOSTS
-  # APPENGINE_URL: PROJECT_ID.uc.r.appspot.com
   APPENGINE_URL: https://metalit-website.uc.r.appspot.com
   GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT}
-  SECRET_KEY: ${SECRET_KEY}
-  BLOG_URL: https://blog.metalit.id
   DJANGO_DEBUG: "False"
   AWS_S3_SECRET_ACCESS_KEY: ${AWS_S3_SECRET_ACCESS_KEY}
   AWS_S3_ACCESS_KEY_ID: ${AWS_S3_ACCESS_KEY_ID}
@@ -35,8 +31,8 @@ env_variables:
   DATABASE_USER: ${DATABASE_USER}
   DATABASE_PASSWORD: ${DATABASE_PASSWORD}
   DATABASE_HOST: ${DATABASE_HOST}
-
-service_account: django-app-engine@metalit-website.iam.gserviceaccount.com
+  BLOG_URL: https://blog.metalit.id
+  SECRET_KEY: ${SECRET_KEY}
 
 handlers:
 # This configures Google App Engine to serve the files in the app's static
