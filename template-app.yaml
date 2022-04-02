@@ -1,11 +1,22 @@
 runtime: python39
 
 env_variables:
-  APPENGINE_URL: https://metalit-website.uc.r.appspot.com
-  GOOGLE_CLOUD_PROJECT: metalit-website
+  # This setting is used in settings.py to configure your ALLOWED_HOSTS
+  # APPENGINE_URL: PROJECT_ID.uc.r.appspot.com
+  APPENGINE_URL: ${APPENGINE_URL}
+  GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT}
+  SECRET_KEY: ${SECRET_KEY}
+  BLOG_URL: ${BLOG_URL}
+  DJANGO_DEBUG: ${DJANGO_DEBUG}
+  AWS_S3_SECRET_ACCESS_KEY: ${AWS_S3_SECRET_ACCESS_KEY}
+  AWS_S3_ACCESS_KEY_ID: ${AWS_S3_ACCESS_KEY_ID}
+  AWS_STORAGE_BUCKET_NAME: ${AWS_STORAGE_BUCKET_NAME}
+  USE_S3: ${USE_S3}
+  DJANGO_DB_ENGINE: ${DJANGO_DB_ENGINE}
+  DATABASE_NAME: ${DATABASE_NAME}
+  DATABASE_USER: ${DATABASE_USER}
   DATABASE_PASSWORD: ${DATABASE_PASSWORD}
   DATABASE_HOST: ${DATABASE_HOST}
-  SECRET_KEY: ${SECRET_KEY}
 
 handlers:
 # This configures Google App Engine to serve the files in the app's static
