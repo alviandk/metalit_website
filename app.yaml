@@ -24,6 +24,8 @@ env_variables:
   APPENGINE_URL: https://metalit-website.uc.r.appspot.com
   GOOGLE_CLOUD_PROJECT: metalit-website
 
+service_account: django-app-engine@metalit-website.iam.gserviceaccount.com
+
 handlers:
 # This configures Google App Engine to serve the files in the app's static
 # directory.
