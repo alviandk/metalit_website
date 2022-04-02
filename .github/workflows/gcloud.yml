@@ -27,12 +27,24 @@ jobs:
       with:
         workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        
+    - id: 'secrets'
+      uses: 'google-github-actions/get-secretmanager-secrets@v0'
+      with:
+        secrets: |-
+          secret_envs:metalit-website/django_settings
+
+    # Example of using the output
+    - id: 'see_env'
+      run: 'echo ${{ steps.secrets.outputs.secret_envs }}'
+  
+    - id: 'env'
+      run: 'echo ${{ steps.secrets.outputs.secret_envs }} >> .env'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-appengine@v0'
       with:
         deliverables: 'app.yaml'
-
 
     # Example of using the output
     - id: 'test'
