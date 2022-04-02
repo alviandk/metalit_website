@@ -22,14 +22,14 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 # reading .env file
-#environ.Env.read_env()
-project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+environ.Env.read_env()
+# project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
 
-client = secretmanager.SecretManagerServiceClient()
-settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
-name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
-payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
-env.read_env(io.StringIO(payload))
+# client = secretmanager.SecretManagerServiceClient()
+# settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
+# name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
+# payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+# env.read_env(io.StringIO(payload))
 
 APPENGINE_URL = env("APPENGINE_URL", default=None)
 if APPENGINE_URL:
