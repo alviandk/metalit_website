@@ -20,19 +20,33 @@ jobs:
 
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: 'actions/checkout@v3'
+    - uses: actions/checkout@v2
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
+    - id: generate_dotenv_file
+      env:
+        BLOG_URL: ${{ secrets.BLOG_URL }}
+      run: echo "$BLOG_URL" > .env-for-app-yaml
+
+    - id: prepare-app-yaml
+      uses: mshick/fast-envsubst@v1
       with:
-        workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
-        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        env-file: .env-for-app-yaml
+        in-file: app.yaml.template
+        out-file: app.yaml
+    - name: cat app.yaml
+      run: cat app.yaml
+
+#     - id: 'auth'
+#       uses: 'google-github-actions/auth@v0'
+#       with:
+#         workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
+#         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         
-    - id: 'secrets'
-      uses: 'google-github-actions/get-secretmanager-secrets@v0'
-      with:
-        secrets: |-
-          SECRET_KEY:metalit-website/django_settings
+#     - id: 'secrets'
+#       uses: 'google-github-actions/get-secretmanager-secrets@v0'
+#       with:
+#         secrets: |-
+#           SECRET_KEY:metalit-website/django_settings
 #           BLOG_URL:metalit-website/django_settings
 #           DJANGO_DEBUG:metalit-website/django_settings
 #           AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
@@ -45,10 +59,10 @@ jobs:
 #           DATABASE_PASSWORD:metalit-website/django_settings
 #           DATABASE_HOST:metalit-website/django_settings
           
-    - name: Write BLOG_URL
-      run: echo ${{ secrets.BLOG_URL }} > some.txt
-    - name: cat BLOG_URL
-      run: cat some.txt
+#     - name: Write BLOG_URL
+#       run: echo ${{ secrets.BLOG_URL }} > some.txt
+#     - name: cat BLOG_URL
+#       run: cat some.txt
           
 #     - id: generate_dotenv_file
 #       env:
