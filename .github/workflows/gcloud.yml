@@ -52,16 +52,13 @@ jobs:
     - id: generate_dotenv_file
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        BLOG_URL: ${{ secrets.SECRET_KEY }}
-      run: echo "$SECRET_KEY\n$BLOG_URL" > .env-for-app-yaml
-      
-    - id: cat_env
-      run: cat .env-for-app-yaml
+        BLOG_URL: ${{ secrets.BLOG_URL }}
+      run: echo "$SECRET_KEY" > .env-for-app-yaml
       
     - id: prepare-app-yaml
       uses: mshick/fast-envsubst@v1
-#       env:
-#         APPENGINE_URL: https://metalit-website.uc.r.appspot.com
+      env:
+        APPENGINE_URL: https://metalit-website.uc.r.appspot.com
 #         GOOGLE_CLOUD_PROJECT: metalit-website
 #         SECRET_KEY: '${{ steps.secrets.outputs.SECRET_KEY }}'
 #         BLOG_URL: '${{ steps.secrets.outputs.BLOG_URL }}'
@@ -79,16 +76,14 @@ jobs:
         env-file: .env-for-app-yaml
         in-file: template-app.yaml
         out-file: app.yaml
-    
-#     - id: 'see-yaml'
-#       run: 'cat app.yaml'
 
-#     - id: 'deploy'
-#       uses: 'google-github-actions/deploy-appengine@v0'
-#       with:
-#         deliverables: 'app.yaml'
 
-#     # Example of using the output
-#     - id: 'test'
-#       run: 'curl "${{ steps.deploy.outputs.url }}"'
+    - id: 'deploy'
+      uses: 'google-github-actions/deploy-appengine@v0'
+      with:
+        deliverables: 'app.yaml'
+
+    # Example of using the output
+    - id: 'test'
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
 
