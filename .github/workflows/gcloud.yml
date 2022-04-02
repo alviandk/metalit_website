@@ -45,10 +45,17 @@ jobs:
           DATABASE_PASSWORD:metalit-website/django_settings
           DATABASE_HOST:metalit-website/django_settings
           
+    - id: env
+      run: 'echo ${{ steps.secrets.outputs.BLOG_URL }} >> .env'
+      
+    - id: catblog
+      run: 'cat .env'
+          
     - id: generate_dotenv_file
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      run: echo "$SECRET_KEY" > .env-for-app-yaml
+        BLOG_URL: ${{ secrets.SECRET_KEY }}
+      run: echo "$SECRET_KEY\n$BLOG_URL" > .env-for-app-yaml
       
     - id: cat_env
       run: cat .env-for-app-yaml
@@ -78,12 +85,12 @@ jobs:
 #     - id: 'see-yaml'
 #       run: 'cat app.yaml'
 
-    - id: 'deploy'
-      uses: 'google-github-actions/deploy-appengine@v0'
-      with:
-        deliverables: 'app.yaml'
+#     - id: 'deploy'
+#       uses: 'google-github-actions/deploy-appengine@v0'
+#       with:
+#         deliverables: 'app.yaml'
 
-    # Example of using the output
-    - id: 'test'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'
+#     # Example of using the output
+#     - id: 'test'
+#       run: 'curl "${{ steps.deploy.outputs.url }}"'
 
