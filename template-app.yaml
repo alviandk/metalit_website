@@ -2,14 +2,9 @@ runtime: python39
 
 env_variables:
   APPENGINE_URL: https://metalit-website.uc.r.appspot.com
-  GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT}
-  DJANGO_DEBUG: "False"
-  DJANGO_DB_ENGINE: ${DJANGO_DB_ENGINE}
-  DATABASE_NAME: ${DATABASE_NAME}
-  DATABASE_USER: ${DATABASE_USER}
+  GOOGLE_CLOUD_PROJECT: metalit-website
   DATABASE_PASSWORD: ${DATABASE_PASSWORD}
   DATABASE_HOST: ${DATABASE_HOST}
-  BLOG_URL: https://blog.metalit.id
   SECRET_KEY: ${SECRET_KEY}
 
 handlers:
