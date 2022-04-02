@@ -23,6 +23,18 @@ env_variables:
   # APPENGINE_URL: PROJECT_ID.uc.r.appspot.com
   APPENGINE_URL: https://metalit-website.uc.r.appspot.com
   GOOGLE_CLOUD_PROJECT: metalit-website
+  SECRET_KEY: ${SECRET_KEY}
+  BLOG_URL: https://blog.metalit.id
+  DJANGO_DEBUG: False
+  AWS_S3_SECRET_ACCESS_KEY: ${AWS_S3_SECRET_ACCESS_KEY}
+  AWS_S3_ACCESS_KEY_ID: ${AWS_S3_ACCESS_KEY_ID}
+  AWS_STORAGE_BUCKET_NAME: metalit-website
+  USE_S3: True
+  DJANGO_DB_ENGINE: mysql
+  DATABASE_NAME: ${DATABASE_NAME}
+  DATABASE_USER: ${DATABASE_USER}
+  DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+  DATABASE_HOST: ${DATABASE_HOST}
 
 service_account: django-app-engine@metalit-website.iam.gserviceaccount.com
 
