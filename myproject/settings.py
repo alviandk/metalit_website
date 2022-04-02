@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import environ
 import os
 from pathlib import Path
+from google.cloud import secretmanager
+
 from django.contrib import messages
 
 
@@ -20,7 +22,26 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 # reading .env file
-environ.Env.read_env()
+#environ.Env.read_env()
+project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+
+client = secretmanager.SecretManagerServiceClient()
+settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
+name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
+payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+env.read_env(io.StringIO(payload))
+
+APPENGINE_URL = env("APPENGINE_URL", default=None)
+if APPENGINE_URL:
+    # Ensure a scheme is present in the URL before it's processed.
+    if not urlparse(APPENGINE_URL).scheme:
+        APPENGINE_URL = f"https://{APPENGINE_URL}"
+
+    ALLOWED_HOSTS = [urlparse(APPENGINE_URL).netloc]
+    CSRF_TRUSTED_ORIGINS = [APPENGINE_URL]
+    SECURE_SSL_REDIRECT = True
+else:
+    ALLOWED_HOSTS = ["*"]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +55,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+#ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
