@@ -33,13 +33,16 @@ jobs:
       with:
         secrets: |-
           secret_envs:metalit-website/django_settings
-
-    # Example of using the output
-    - id: 'see_env'
-      run: 'echo ${{ steps.secrets.outputs.secret_envs }}'
   
     - id: 'env'
       run: 'echo ${{ steps.secrets.outputs.secret_envs }} >> .env'
+      
+    - id: prepare-app-yaml
+      uses: mshick/fast-envsubst@v1
+      with:
+        env-file: .env
+        in-file: template-app.yaml
+        out-file: app.yaml
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-appengine@v0'
