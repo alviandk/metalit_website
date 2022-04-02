@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import environ
 import os
-from pathlib import Path
+
 from google.cloud import secretmanager
+from pathlib import Path
+from urllib.parse import urlparse
 
 from django.contrib import messages
 
