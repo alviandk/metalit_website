@@ -24,8 +24,8 @@ jobs:
 
     - id: generate_dotenv_file
       env:
-        BLOG_URL: ${{ secrets.SECRET_KEY }}
-      run: echo "$SECRET_KEY" > .env-for-app-yaml
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: echo "SECRET_KEY=$SECRET_KEY" > .env-for-app-yaml
 
     - id: prepare-app-yaml
       uses: mshick/fast-envsubst@v1
