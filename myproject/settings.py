@@ -22,7 +22,14 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 # reading .env file
-environ.Env.read_env()
+# environ.Env.read_env()
+
+env_file = os.path.join(BASE_DIR, ".env")
+
+if os.path.isfile(env_file):
+    # Use a local secret file, if provided
+    env.read_env(env_file)
+
 # project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
 
 # client = secretmanager.SecretManagerServiceClient()
