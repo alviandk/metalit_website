@@ -24,9 +24,6 @@ env_variables:
   APPENGINE_URL: https://metalit-website.uc.r.appspot.com
   GOOGLE_CLOUD_PROJECT: metalit-website
 
-vpc_access_connector:
- name: projects/d-procedural-munkos/locations/us-central1/connectors/munkos-connector
-
 handlers:
 # This configures Google App Engine to serve the files in the app's static
 # directory.
