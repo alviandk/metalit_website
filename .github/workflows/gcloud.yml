@@ -28,62 +28,63 @@ jobs:
         workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         
-    - id: 'secrets'
-      uses: 'google-github-actions/get-secretmanager-secrets@v0'
-      with:
-        secrets: |-
-          SECRET_KEY:metalit-website/django_settings
-          BLOG_URL:metalit-website/django_settings
-          DJANGO_DEBUG:metalit-website/django_settings
-          AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
-          AWS_S3_ACCESS_KEY_ID:metalit-website/django_settings
-          AWS_STORAGE_BUCKET_NAME:metalit-website/django_settings
-          USE_S3:metalit-website/django_settings
-          DJANGO_DB_ENGINE:metalit-website/django_settings
-          DATABASE_NAME:metalit-website/django_settings
-          DATABASE_USER:metalit-website/django_settings
-          DATABASE_PASSWORD:metalit-website/django_settings
-          DATABASE_HOST:metalit-website/django_settings
+#     - id: 'secrets'
+#       uses: 'google-github-actions/get-secretmanager-secrets@v0'
+#       with:
+#         secrets: |-
+#           SECRET_KEY:metalit-website/django_settings
+#           BLOG_URL:metalit-website/django_settings
+#           DJANGO_DEBUG:metalit-website/django_settings
+#           AWS_S3_SECRET_ACCESS_KEY:metalit-website/django_settings
+#           AWS_S3_ACCESS_KEY_ID:metalit-website/django_settings
+#           AWS_STORAGE_BUCKET_NAME:metalit-website/django_settings
+#           USE_S3:metalit-website/django_settings
+#           DJANGO_DB_ENGINE:metalit-website/django_settings
+#           DATABASE_NAME:metalit-website/django_settings
+#           DATABASE_USER:metalit-website/django_settings
+#           DATABASE_PASSWORD:metalit-website/django_settings
+#           DATABASE_HOST:metalit-website/django_settings
           
-    - name: Write the secrets content
+    - name: Write APPENGINE_URL
       run: |
-        echo "${{ steps.secrets.outputs.BLOG_URL }}"
+          APPENGINE_URL=1234 envsubst < template-app.yaml  > app.yaml
+          cat app.yaml
           
-    - id: generate_dotenv_file
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        BLOG_URL: ${{ secrets.BLOG_URL }}
-      run: echo "$SECRET_KEY" > .env-for-app-yaml
+#     - id: generate_dotenv_file
+#       env:
+#         SECRET_KEY: ${{ secrets.SECRET_KEY }}
+#         BLOG_URL: ${{ secrets.BLOG_URL }}
+#       run: echo "$SECRET_KEY" > .env-for-app-yaml
       
-    - id: prepare-app-yaml
-      uses: mshick/fast-envsubst@v1
-      env:
-        APPENGINE_URL: https://metalit-website.uc.r.appspot.com
-#         GOOGLE_CLOUD_PROJECT: metalit-website
-#         SECRET_KEY: '${{ steps.secrets.outputs.SECRET_KEY }}'
-#         BLOG_URL: '${{ steps.secrets.outputs.BLOG_URL }}'
-#         DJANGO_DEBUG: '${{ steps.secrets.outputs.DJANGO_DEBUG }}'
-#         AWS_S3_SECRET_ACCESS_KEY: '${{ steps.secrets.outputs.AWS_S3_SECRET_ACCESS_KEY }}'
-#         AWS_S3_ACCESS_KEY_ID: '${{ steps.secrets.outputs.AWS_S3_ACCESS_KEY_ID }}'
-#         AWS_STORAGE_BUCKET_NAME: '${{ steps.secrets.outputs.AWS_STORAGE_BUCKET_NAME }}'
-#         USE_S3: '${{ steps.secrets.outputs.USE_S3 }}'
-#         DJANGO_DB_ENGINE: '${{ steps.secrets.outputs.DJANGO_DB_ENGINE }}'
-#         DATABASE_NAME: '${{ steps.secrets.outputs.DATABASE_NAME }}'
-#         DATABASE_USER: '${{ steps.secrets.outputs.DATABASE_USER }}'
-#         DATABASE_PASSWORD: '${{ steps.secrets.outputs.DATABASE_PASSWORD }}'
-#         DATABASE_HOST: '${{ steps.secrets.outputs.DATABASE_HOST }}'
-      with:
-        env-file: .env-for-app-yaml
-        in-file: template-app.yaml
-        out-file: app.yaml
+#     - id: prepare-app-yaml
+#       uses: mshick/fast-envsubst@v1
+#       env:
+#         APPENGINE_URL: https://metalit-website.uc.r.appspot.com
+# #         GOOGLE_CLOUD_PROJECT: metalit-website
+# #         SECRET_KEY: '${{ steps.secrets.outputs.SECRET_KEY }}'
+# #         BLOG_URL: '${{ steps.secrets.outputs.BLOG_URL }}'
+# #         DJANGO_DEBUG: '${{ steps.secrets.outputs.DJANGO_DEBUG }}'
+# #         AWS_S3_SECRET_ACCESS_KEY: '${{ steps.secrets.outputs.AWS_S3_SECRET_ACCESS_KEY }}'
+# #         AWS_S3_ACCESS_KEY_ID: '${{ steps.secrets.outputs.AWS_S3_ACCESS_KEY_ID }}'
+# #         AWS_STORAGE_BUCKET_NAME: '${{ steps.secrets.outputs.AWS_STORAGE_BUCKET_NAME }}'
+# #         USE_S3: '${{ steps.secrets.outputs.USE_S3 }}'
+# #         DJANGO_DB_ENGINE: '${{ steps.secrets.outputs.DJANGO_DB_ENGINE }}'
+# #         DATABASE_NAME: '${{ steps.secrets.outputs.DATABASE_NAME }}'
+# #         DATABASE_USER: '${{ steps.secrets.outputs.DATABASE_USER }}'
+# #         DATABASE_PASSWORD: '${{ steps.secrets.outputs.DATABASE_PASSWORD }}'
+# #         DATABASE_HOST: '${{ steps.secrets.outputs.DATABASE_HOST }}'
+#       with:
+#         env-file: .env-for-app-yaml
+#         in-file: template-app.yaml
+#         out-file: app.yaml
 
 
-    - id: 'deploy'
-      uses: 'google-github-actions/deploy-appengine@v0'
-      with:
-        deliverables: 'app.yaml'
+#     - id: 'deploy'
+#       uses: 'google-github-actions/deploy-appengine@v0'
+#       with:
+#         deliverables: 'app.yaml'
 
-    # Example of using the output
-    - id: 'test'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'
+#     # Example of using the output
+#     - id: 'test'
+#       run: 'curl "${{ steps.deploy.outputs.url }}"'
 
