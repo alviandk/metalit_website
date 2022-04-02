@@ -45,9 +45,9 @@ jobs:
 #           DATABASE_PASSWORD:metalit-website/django_settings
 #           DATABASE_HOST:metalit-website/django_settings
           
-    - name: Write APPENGINE_URL
+    - name: Write SECRET_KEY
       run: |
-          APPENGINE_URL=1234 envsubst < template-app.yaml  > app.yaml
+          SECRET_KEY=${{ secrets.SECRET_KEY }} envsubst < template-app.yaml  > app.yaml
           cat app.yaml
           
 #     - id: generate_dotenv_file
