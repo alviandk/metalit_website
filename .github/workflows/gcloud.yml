@@ -47,6 +47,8 @@ jobs:
           
     - name: Write SECRET_KEY
       run: echo ${{ secrets.SECRET_KEY }} > some.txt
+    - name: Write BLOG_URL
+      run: echo ${{ secrets.BLOG_URL }} >> some.txt
     - name: cat SECRET_KEY
       run: cat some.txt
           
